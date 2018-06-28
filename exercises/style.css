@@ -1,0 +1,19 @@
+body
+{
+    background-color: lightgray;
+    font-family: sans-serif;
+}
+.Container
+{
+    margin-left: 200px;
+}
+
+.emplasis
+{
+    font-weight: bold;
+}
+blockquote
+{
+    border: 1px solid white;
+    text-align: center;
+} 

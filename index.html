@@ -5,8 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet"  href="./css/main.css" > 
+    <style> 
+    #emphasis
+    {
+        color: red;
+    }
+    .green-emphasis
+    {
+        color: green;
+    }
+
+    li:nth-child(2)
+    {
+        color:orange;
+    }
+</style>
 </head>
-<body>
-    <p>This is the paragraph</p>
-</body>
+<body class="body-bg">
+    <p style="color: green">This is the paragraph</p>
+
+    <h1>TESTING THE NEW HTML TAGS</h1>
+
+    <H3>1. Definition List</H3>
+    <dl>
+        <dt>This is the type</dt>
+        <dd>This is the definition</dd>
+    </dl>
+    <H3>2.Block quote</H3>
+    <blockquote>
+        <paragraph>
+            This is the quote wrapped ina a paragraph.
+        </paragraph>
+          <p>
+            This is the quote wrapped ina a paragraph.
+        </paragraph>
+    </blockquote>
+
+     <H3>3.Images </H3>
+     <img src="img/image1.jpg" alt="People image"></img> <br>
+     <img height="100; width: 300" src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg" alt="link image"></img>
+          <H3>4.Ephasis on a single LI </H3>
+          <ul>
+              <li>One</li>
+              <li>two</li>
+              <li id="emphasis">three</li>
+              <li class="green-emphasis">Fourth added class green emphasis</li>
+          </ul>
+    </body>
 </html>
