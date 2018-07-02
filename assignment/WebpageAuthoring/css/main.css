@@ -5,9 +5,8 @@ body {
 h2 {
   font-family: "Tangerine", serif;
 }
-.main-container
-{
- display: flex;
+.main-container {
+  display: flex;
 }
 
 .navigation {
@@ -44,9 +43,15 @@ h2 {
   flex-direction: column;
 }
 
-main
-{
+main {
   flex-grow: 1;
+}
+
+.hero-section {
+  overflow: hidden;
+  background: url(../img/music-concerts.jpeg) center center / cover no-repeat;
+  height: 600px;
+  width: 100%;
 }
 
 footer {
@@ -89,9 +94,9 @@ nav {
   top: 0;
   width: 100%;
 }
-  nav.fix-content {
+nav.fix-content {
   top: 80px !important;
-}  
+}
 
 nav li a:hover {
   color: white;
