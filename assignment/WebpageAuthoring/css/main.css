@@ -5,11 +5,16 @@ body {
 h2 {
   font-family: "Tangerine", serif;
 }
+.main-container
+{
+ display: flex;
+}
+
 .navigation {
   display: flex;
   background: deepskyblue;
   justify-content: flex-end;
- }
+}
 /*Media query for smaller resolution screens */
 @media all and (max-width: 500px) {
   .navigation {
@@ -30,9 +35,18 @@ h2 {
   }
 }
 
+.clearfix::after {
+  display: block;
+  clear: both;
+}
 .main-container {
   display: flex;
   flex-direction: column;
+}
+
+main
+{
+  flex-grow: 1;
 }
 
 footer {
@@ -43,15 +57,13 @@ footer {
 }
 
 .logo {
-  height: 50px;
-  width: 50px;
+  height: 68px;
+  width: 68px;
   float: left;
 }
 
-header
-{
+header {
   background-color: #a7e3f7;
-
 }
 .header-text {
   float: left;
@@ -73,13 +85,14 @@ nav {
 }
 .fix-content {
   position: fixed;
-   
   left: 0;
+  top: 0;
   width: 100%;
 }
-nav.fix-content  {
-   top: 80px !important;
-}
+  nav.fix-content {
+  top: 80px !important;
+}  
+
 nav li a:hover {
   color: white;
   text-decoration: underline;
