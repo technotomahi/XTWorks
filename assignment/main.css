@@ -1,0 +1,64 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+h1 {
+    color: blue;
+} 
+
+div.flex-items
+{
+    border: 1px solid black;
+}
+
+.wrap
+{
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+}
+
+.middle-container
+{
+     display: flex;
+    min-height: 300px;
+    flex-direction: row;
+}
+
+.box-header
+{
+flex-basis: 100%;
+order: 1;
+background-color: wheat;
+height: 50px;
+align-items: stretch;
+
+}
+
+.box-side-left
+{
+    flex: 1%;
+}
+
+.box-side-right
+{
+    flex: 1;
+}
+
+.box-main-content
+{
+ flex: 4;
+}
+
+
+
+.box-nav
+{
+    flex: 0 0 20px;
+    background: orange;
+}
+.box-footer
+{
+    background-color: wheat;
+    height : 50px;
+}

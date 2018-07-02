@@ -1,0 +1,125 @@
+body 
+{
+    margin: auto;
+}
+
+.main-container
+{
+    display: flex; 
+    flex-direction: column;
+    
+}
+
+footer
+{
+    min-height: 50 px; 
+    color: white;
+    background-color: gray;
+    text-align: center;
+}
+
+.logo
+{
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+.header-text
+{
+    float: left;
+}
+nav
+{
+    background-color: gray;
+   
+}
+nav  li
+{
+    list-style: none;
+    display: inline;  
+    padding-right: 20px; 
+}
+nav  li a
+{ 
+    color: white; 
+    text-decoration: none;
+}
+nav  li a:hover
+{ 
+    color: white; 
+    text-decoration: underline;
+    color: blue;
+}
+
+.social li
+{
+    list-style: none;
+    display: inline;
+    padding: 3px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.home-content
+{
+    background-color: #F5F5F5;
+    margin: auto;
+}
+
+.page-section
+{
+   padding: 70px 0;
+   
+}
+
+.center
+{
+    text-align: center !important;
+}
+
+.flex-wrap
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.col-padding
+{
+    padding: 60px;
+}
+
+.section
+{
+    background-color: #fff;
+    flex:1;
+    margin: 10px;
+}
+
+.more
+{
+    background-color: black;
+    color: #F5F5F5;
+}
+
+.button
+{
+    display: inline-block;
+    cursor: pointer;
+    outline: 0;
+    white-space: nowrap;
+    margin: 5px;
+    padding: 0 22px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #1abc9c;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+
+

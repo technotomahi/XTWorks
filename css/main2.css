@@ -1,0 +1,29 @@
+body {
+    background-color: white;
+}
+h1 {
+    color: blue;
+}
+p {
+    /* color: red; */
+}
+
+.wrap
+{
+    background-color: yellow;
+    width: 80%;
+    margin: auto;
+}
+.content
+{
+ background-color: red;
+    width: 70%;
+    height: 100%;
+    float : left;
+}
+aside
+{
+    background-color: brown;
+    width: 30%;
+    float: left;
+}
