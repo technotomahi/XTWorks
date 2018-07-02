@@ -1,0 +1,179 @@
+body {
+  margin: auto;
+}
+
+h2 {
+  font-family: "Tangerine", serif;
+}
+.navigation {
+  display: flex;
+  background: deepskyblue;
+  justify-content: flex-end;
+ }
+/*Media query for smaller resolution screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    flex-direction: column;
+    /* -webkit-flex-flow: column wrap; */
+    /* flex-flow: column wrap; */
+    padding: 1px;
+  }
+
+  nav li {
+    border-bottom: 1px solid wheat;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  min-height: 50 px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+header
+{
+  background-color: #a7e3f7;
+
+}
+.header-text {
+  float: left;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+  text-align: center;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+nav {
+  background: deepskyblue;
+  height: 33px;
+}
+.fix-content {
+  position: fixed;
+   
+  left: 0;
+  width: 100%;
+}
+nav.fix-content  {
+   top: 80px !important;
+}
+nav li a:hover {
+  color: white;
+  text-decoration: underline;
+  color: blue;
+}
+
+.social li {
+  list-style: none;
+  display: inline;
+  padding: 3px;
+  background-color: aliceblue;
+  border-radius: 50%;
+}
+
+.home-content {
+  background-color: #f5f5f5;
+  margin: auto;
+}
+
+.page-section {
+  padding: 70px 0;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-flow: row;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.col-padding {
+  padding: 60px;
+}
+
+.section {
+  background-color: #fff;
+  margin: 10px;
+}
+
+.more {
+  background-color: black;
+  color: #f5f5f5;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  outline: 0;
+  white-space: nowrap;
+  margin: 5px;
+  padding: 0 22px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #1abc9c;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio {
+  display: flex;
+  flex-flow: row;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.left-folio {
+  flex: 2;
+}
+.tile-image {
+  height: 400px;
+  width: 500px;
+}
+
+.right-folio {
+  display: flex;
+  flex-direction: column;
+}
+
+.folio-right-content {
+  padding: 10px;
+}
+
+.folio-right-content img {
+  height: 123px;
+  width: 100%;
+}
