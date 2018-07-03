@@ -1,0 +1,12 @@
+ 
+body {
+  margin: auto;
+}
+
+h2 {
+  font-family: "Tangerine", serif;
+}
+
+main {
+  flex-grow: 1;
+}
