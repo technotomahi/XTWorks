@@ -52,6 +52,7 @@ main {
   background: url(../img/music-concerts.jpeg) center center / cover no-repeat;
   height: 600px;
   width: 100%;
+  min-width: 500px;
 }
 
 footer {
@@ -194,4 +195,18 @@ nav li a:hover {
 .folio-right-content img {
   height: 123px;
   width: 100%;
+}
+
+ .fire {
+  text-shadow: 5px 5px 10px red;  
+  font-size: 42pt;
+  font-weight: bolder;
+  text-align: center;
+  color: #12d8b3;
+  /* top: 100px;
+  position: relative; */
+  text-align: center;
+vertical-align: bottom ;
+line-height: 520px; 
+ font-family: 'Tangerine', serif;
 }
