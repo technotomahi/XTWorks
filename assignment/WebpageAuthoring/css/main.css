@@ -31,6 +31,7 @@ h2 {
 @media all and (max-width: 800px) {
   .navigation {
     justify-content: space-around;
+    padding-right: 20px;
   }
 }
 
@@ -197,8 +198,8 @@ nav li a:hover {
   width: 100%;
 }
 
- .fire {
-  text-shadow: 5px 5px 10px red;  
+.fire {
+  text-shadow: 5px 5px 10px red;
   font-size: 42pt;
   font-weight: bolder;
   text-align: center;
@@ -206,7 +207,20 @@ nav li a:hover {
   /* top: 100px;
   position: relative; */
   text-align: center;
-vertical-align: bottom ;
-line-height: 520px; 
- font-family: 'Tangerine', serif;
+  vertical-align: bottom;
+  line-height: 520px;
+  font-family: "Tangerine", serif;
+}
+
+.immortant {
+  color: red;
+}
+.extra-content-wrap {
+  display: flex;
+  flex-direction: row;
+ flex-wrap: wrap;
+  justify-content: space-around;
+}
+.extra-content {
+    margin: 20px;  
 }
