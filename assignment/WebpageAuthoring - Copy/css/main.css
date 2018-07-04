@@ -1,3 +1,4 @@
+
 .main-container {
   display: flex;
 }
@@ -11,20 +12,13 @@
 @media all and (max-width: 500px) {
   .navigation {
     flex-direction: column;
+    /* -webkit-flex-flow: column wrap; */
+    /* flex-flow: column wrap; */
     padding: 1px;
   }
 
   nav li {
     border-bottom: 1px solid wheat;
-  }
-
-  .tile-image {
-    height: 400px;
-    width: 100vw;
-  }
-
-  .wrap {
-    flex-wrap: wrap;
   }
 }
 
@@ -47,7 +41,9 @@
 .hero-section {
   overflow: hidden;
   background: url(../img/music-concerts.jpeg) center center / cover no-repeat;
-  width: 100vw;
+  height: 600px;
+  width: 100%;
+  min-width: 500px;
 }
 
 footer {
@@ -124,7 +120,7 @@ nav li a:hover {
 .flex-wrap {
   display: flex;
   flex-flow: row;
-  /* -webkit-flex-flow: row wrap; */
+  -webkit-flex-flow: row wrap;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -136,12 +132,6 @@ nav li a:hover {
 .section {
   background-color: #fff;
   margin: 10px;
-}
-
-.extra-section {
-  background-color: #fff;
-  margin: 10px;
-  padding: 10px;
 }
 
 .more {
@@ -171,23 +161,17 @@ nav li a:hover {
 .portfolio {
   display: flex;
   flex-flow: row;
-  /* -webkit-flex-flow: row wrap; */
+  -webkit-flex-flow: row wrap;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.extra-left-content {
-  margin: 10px;
+.left-folio {
+  flex: 2;
 }
-.extra-wrap {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-}
-
 .tile-image {
   height: 400px;
-  /* width: 100vw; */
+  width: 500px;
 }
 
 .right-folio {
@@ -196,7 +180,7 @@ nav li a:hover {
 }
 
 .folio-right-content {
-  padding: 5px;
+  padding: 10px;
 }
 
 .folio-right-content img {
@@ -224,9 +208,9 @@ nav li a:hover {
 .extra-content-wrap {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+ flex-wrap: wrap;
   justify-content: space-around;
 }
 .extra-content {
-  margin: 20px;
+    margin: 20px;  
 }

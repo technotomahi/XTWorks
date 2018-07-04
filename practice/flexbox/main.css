@@ -1,12 +1,33 @@
 .parent {
   display: flex;
-  height: 300px; /* Or whatever */
   background-color: gray;
+  /*
+  flex-start | flex-end | center | baseline | stretch;
+  */
+  align-items: flex-start;
+  flex-direction: row;
+  /*
+  flex-start | flex-end | center | space-between | space-around | stretch;
+  */
+  /* align-content: flex-end;  */
+  height: 90vh;
+  flex-wrap: wrap;
 }
 
 .child {
-  width: 100px;  /* Or whatever */
-  height: 100px; /* Or whatever */
-  margin: auto;  /* Magic! */
+  height: 100px;
+  width: 100px;
   background-color: red;
+  margin: 5px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.child2 {
+  flex: "1 2 calc(15em + 20px)";
+}
+.child3 {
+  flex-grow: 5;
+}
+.child4 {
 }
