@@ -1,0 +1,7 @@
+.l-horizontal{
+  display: flex;
+}
+.l-vertical {
+  display: flex;
+  flex-direction: column;
+}
