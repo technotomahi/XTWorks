@@ -1,0 +1,33 @@
+.section-content {
+  padding: 5rem 0; }
+
+#main-nav {
+  background-color: #a7e3f7; }
+
+.card {
+  margin-top: 10px; }
+
+img.logo {
+  max-width: 2rem; }
+
+.about-text {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 1rem;
+  padding: 0.5rem; }
+
+footer {
+  background-color: #222;
+  color: white;
+  margin-top: 2rem;
+  padding: 2rem; }
+
+footer a {
+  color: white; }
+
+/* this is applied when the screen size exceeds 991px */
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: .25rem;
+    line-height: 1.4; } }

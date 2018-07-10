@@ -10,17 +10,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/lib/bootstrap.css"> -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/index.css">
 </head>
 
 <body>
     <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-blue fixed-top">
-        <img src="img/logo1.png" class="logo img-fluid" x`alt="Company logo">
+        <img src="src/img/logo1.png" class="logo img-fluid" alt="Shemaroo Company logo">
         <a class="navbar-brand" href="http://sapient.com">Shemaroo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +31,10 @@
                     <a class="nav-link" href="#">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Contact Us</a>
+                    <a class="nav-link " href="#ContactUsForm">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">About Us</a>
+                    <a class="nav-link " href="#AboutUs">About Us</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -49,28 +44,36 @@
         </div>
     </nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="CarouselConcerts" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#CarouselConcerts" data-slide-to="0" class="active"></li>
+            <li data-target="#CarouselConcerts" data-slide-to="1"></li>
+            <li data-target="#CarouselConcerts" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="img/music-concerts1.jpeg" alt="First slide">
+                <img class="d-block w-100" src="src/img/music-concerts1.jpeg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Subscribe</h1>
+                        <p>
+                            <a class="btn btn-sm btn-secondary" href="#" role="button" data-toggle="modal" data-target="#loginModal">Sign In</a>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/music-concerts2.jpeg" alt="Second slide">
+                <img class="d-block w-100" src="src/img/music-concerts2.jpeg" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/music-concerts3.jpeg" alt="Third slide">
+                <img class="d-block w-100" src="src/img/music-concerts3.jpeg" alt="Third slide">
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#CarouselConcerts" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
          </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#CarouselConcerts" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -78,12 +81,11 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Jumbo Music</h1>
-            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet,
+            <h2 class="jumbotron-heading">Jumbo Music</h2>
+            <p class="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet,
                 but not too short so folks don't simply skip over it entirely.</p>
             <p>
-                <a href="#" class="btn btn-info my-2">Call Jumboora</a>
-                <a href="#" class="btn btn-secondary my-2">Not Interested</a>
+                <a href="#" class="btn btn-secondary my-2">Book Jambura show</a>
             </p>
         </div>
     </section>
@@ -100,7 +102,7 @@
                     <div class="col-sm-12">
                         <div class="card-group">
                             <div class="card">
-                                <img class="card-img-top" src="img/music1.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="src/img/music1.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Music is tune</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -108,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="img/music2.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="src/img/music2.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Bolywood</h5>
                                     <p class="card-text">Here you will find the great music content. Just tell us what you want to listen we will
@@ -116,7 +118,7 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="img/music3.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="src/img/music3.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Music is in Soul</h5>
                                     <p class="card-text">The classical line of the things are here for you. This is a wider music card with supporting
@@ -125,7 +127,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -134,8 +135,8 @@
 
     <section>
         <div class="section-content">
-            <div class="container">
-                <div class="col-sm-6">
+            <div id="#AboutUs" class="container">
+                <div class="col-sm-12">
                     <div class="about-text">
                         <h3>About us</h3>
                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt facere laborum ipsum iure nobis
@@ -147,7 +148,7 @@
             </div>
         </div>
     </section>
-    <div class="container">
+    <div id="ContactUsForm" class="container">
         <div class="row">
             <div class="col-md-offset-3 col-md-10">
                 <div class="form_main">
@@ -177,14 +178,13 @@
                                     <label for="inputCity">City</label>
                                     <input type="text" class="form-control" id="inputCity">
                                 </div>
-                                
+
                                 <div class="form-group col-md-2">
                                     <label for="inputZip">Zip</label>
                                     <input type="text" class="form-control" id="inputZip">
                                 </div>
                             </div>
-                            
-                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="submit" class="btn btn-dark">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <p>Copyright @2017 Shemaroo.com</p>
+                    <p>Copyright @2018 Shemaroo.com</p>
                     <p>Coded by <a href="sapient.com">Sapient XT</a> </p>
                 </div>
                 <div class="col-sm-3">
@@ -213,10 +213,10 @@
                 </div>
                 <div class="col-sm-3">
                     <ul class="list-unstyled">
-                        <li> <a href="facebook.com"><i class="fab fa-facebook"></i> facebook</a></li>
-                        <li><a href="google.com"> <i class="fab fa-google"></i> Google</a></li>
-                        <li><a href="http://twitter.com"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="linkedin.com"><i class="fab fa-linkedin"></i></a> Linkedin</li>
+                        <li> <a href="facebook.com" target="_blank"><i class="fab fa-facebook"></i> facebook</a></li>
+                        <li><a href="google.com" target="_blank"> <i class="fab fa-google"></i> Google</a></li>
+                        <li><a href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a> </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -229,17 +229,9 @@
         </div>
     </footer>
 
-    <!--  JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-
-    <!-- <script src="js/jquery.js"> </script>
-    <script src="js/popper.js"> </script>
-    <script src="js/bootstrap.js"> </script> -->
+    <script src="src/js/jquery.js"></script>
+    <script src="src/js/popper.js"></script>
+    <script src="src/js/bootstrap.js"></script>
 </body>
 
 </html>
