@@ -2,7 +2,11 @@ $body-color:#5a5a5a;
 $btn-color:#bfd0c3;
 $btn-outline-color:#9ca99f;
 $btn-primary-color:#004999;
-$shemaroo: #6c757d; 
+$shemaroo: #6c757d;
+$navbar-light-color: #000; 
+//$shemaroo: red; 
+
+
 
 // // Variables
 // //
@@ -78,7 +82,7 @@ $shemaroo: #6c757d;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
 // $dark:          $gray-800 !default;
- $dark:          $shemaroo !default;
+   $dark:          $shemaroo !default;
 
 // $theme-colors: () !default;
 // $theme-colors: map-merge((
@@ -690,8 +694,8 @@ $shemaroo: #6c757d;
 
 // // Jumbotron
 
-// $jumbotron-padding:                 2rem !default;
-// $jumbotron-bg:                      $gray-200 !default;
+// $jumbotron-padding:                 4rem !default;
+// $jumbotron-bg:                     $shemaroo;// $gray-200 !default;
 
 
 // // Cards

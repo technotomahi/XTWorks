@@ -2066,7 +2066,7 @@ input[type="button"].btn-block {
     color: rgba(0, 0, 0, 0.9); }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5); }
+  color: #000; }
   .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
     color: rgba(0, 0, 0, 0.7); }
   .navbar-light .navbar-nav .nav-link.disabled {
@@ -2079,14 +2079,14 @@ input[type="button"].btn-block {
   color: rgba(0, 0, 0, 0.9); }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
+  color: #000;
   border-color: rgba(0, 0, 0, 0.1); }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
 
 .navbar-light .navbar-text {
-  color: rgba(0, 0, 0, 0.5); }
+  color: #000; }
   .navbar-light .navbar-text a {
     color: rgba(0, 0, 0, 0.9); }
     .navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
@@ -4711,10 +4711,21 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 5rem 0; }
 
 #main-nav {
-  background-color: #a7e3f7; }
+  background-color: #e7f4f9; }
+
+.carousel-caption {
+  max-width: 550px;
+  padding: 0 20px;
+  margin: 0 auto;
+  top: 20%;
+  text-align: center; }
 
 .card {
   margin-top: 10px; }
+
+a.nav-link {
+  font-weight: 700;
+  color: black; }
 
 img.logo {
   max-width: 2rem; }
@@ -4722,14 +4733,10 @@ img.logo {
 .about-text {
   background-color: whitesmoke;
   color: black;
-  border-radius: 1rem;
+  -webkit-border-radius: 0.9em;
+  -moz-border-radius: 0.9em;
+  border-radius: 0.9em;
   padding: 0.5rem; }
-
-footer {
-  background-color: #222;
-  color: white;
-  margin-top: 2rem;
-  padding: 2rem; }
 
 footer a {
   color: white; }
@@ -4738,5 +4745,22 @@ footer a {
 @media (min-width: 40em) {
   .carousel-caption p {
     margin-bottom: 1.25rem;
-    font-size: .25rem;
+    font-size: 0.25rem;
     line-height: 1.4; } }
+
+@media (max-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 0.25rem;
+    line-height: 1.4; } }
+
+.roundedCorner {
+  -webkit-border-radius: 0.9em;
+  -moz-border-radius: 0.9em;
+  border-radius: 0.9em; }
+
+footer {
+  background-color: #222;
+  color: white;
+  margin-top: 2rem;
+  padding: 2rem; }

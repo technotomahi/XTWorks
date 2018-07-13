@@ -1,0 +1,70 @@
+$nav-bg-color: #e7f4f9;
+
+.section-content {
+  padding: 5rem 0;
+}
+
+#main-nav {
+  background-color: $nav-bg-color;
+}
+
+.carousel-caption {
+  max-width: 550px;
+  padding: 0 20px;
+  margin: 0 auto;
+  top: 20%;
+  text-align: center;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+a.nav-link
+{
+    font-weight: 700;
+    color: black;
+}
+
+@mixin roundedborder($radius:0.9em) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+img.logo {
+  max-width: 2rem;
+}
+.about-text {
+  background-color: whitesmoke;
+  color: black;
+  @include roundedborder;
+  padding: 0.5rem;
+}
+
+footer a {
+  color: white;
+}
+/* this is applied when the screen size exceeds 991px */
+@media screen and (min-width: 991px) {
+}
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 0.25rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 0.25rem;
+    line-height: 1.4;
+  }
+}
+
+.roundedCorner{
+    @include roundedborder;
+}
