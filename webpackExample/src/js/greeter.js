@@ -1,4 +1,4 @@
-class Greeter1
+export class Greeter
 {
     //console.log("Hi");
     constructor (greeting)

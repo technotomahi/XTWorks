@@ -1,26 +1,23 @@
-class Greeter
-{
-    //console.log("Hi");
-    constructor (greeting)
-    {
-        this.greeting = greeting; 
-    }
 
-    greet() 
-    {
-        return this.greeting;
-      
-        //document.write("This is the greeting from javascript Greeter : Message - " +  this.greeting);x``
+import { Greeter } from './greeter.js';
+import { DataService } from './services/dataService';
+require('../scss/styles.scss');
 
-    }
-}
-//import Greater from './src/js/greeter.js';
-//require('./src/css/styles.css');
-
-document.write("Hello from Javascript");
+// document.write("Hello from Javascript");
 
 var greeterObj = new Greeter("from Index hello");
 //var greeterObj = new Greeter1("from greeter1 hello");
-document.write('<h1>Hello World from the server'+ greeterObj.greet() +' </h1>');
+// document.write('<h1 class="green">Hello World from the server : '+ greeterObj.greet() +' </h1>');
+
+var dataService = new DataService('d9ccd37d2d650e0f24917ab3ea4126be');
+
+//dataService.logJSON('https://developers.zomato.com/api/v2.1/search');
+dataService.getJSON('https://developers.zomato.com/api/v2.1/search')
+.then(data => {
+    console.log(data);
+})
+.catch(err => { 
+    console.log(err);
+});
 
 //alert("hi");
