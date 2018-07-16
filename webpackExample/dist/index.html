@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shemarroo Redesigned</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-blue">
+        <img src="src/img/logo1.png" class="logo img-fluid" alt="Shemaroo Company logo">
+        <a class="navbar-brand" href="http://sapient.com">Shemaroo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#ContactUsForm">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#AboutUs">About Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <label class="sr-only" for="search">Search</label>
+                <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search for music">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="clearfix"></div>
+    <div id="searchForm" class="container" >
+        <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+                <div class="form_main">
+                    <div class="form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label class="sr-only" for="inputEmail4">City</label>
+                                    <input type="text" class="form-control" id="inputCity" value="Bangalore" placeholder="Bangalore">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="sr-only" for="inputPassword4">Restaurants</label>
+                                    <input type="text" class="form-control" id="inputSearch" placeholder="Search for a restaurant or Cuisine in your city.."></input>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <button id="searchRestaurant" onclick="searchRestaurants()" type="submit" class="btn btn-dark">   Search</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h2 class="jumbotron-heading">Jumbo Music</h2>
+            <p class="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet,
+                but not too short so folks don't simply skip over it entirely.</p>
+            <p>
+                <a href="#" class="btn btn-secondary my-2">Book Jambura show</a>
+            </p>
+        </div>
+    </section>
+
+    <section id="who-are-we">
+        <section-content class="section-content">
+            <div class="container">
+                <h2>Who we are </h2>
+                <p class="lead">
+                    Shemaroo Entertainment Limited is a leading Indian content power house with a global reach, which has been playing a pioneering
+                    role in the arena of content ownership, aggregation and distribution.
+                </p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-group">
+                            <div class="card">
+                                <img class="card-img-top" src="src/img/music1.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Music is tune</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+                                        This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="src/img/music2.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bolywood</h5>
+                                    <p class="card-text">Here you will find the great music content. Just tell us what you want to listen we will
+                                        provide you the stream</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="src/img/music3.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Music is in Soul</h5>
+                                    <p class="card-text">The classical line of the things are here for you. This is a wider music card with supporting
+                                        text below as a natural lead-in to additional content. This card has even longer
+                                        content than the first to show that equal height action.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section-content>
+    </section>
+
+    <section>
+        <div class="section-content">
+            <div id="AboutUs" class="container">
+                <div class="col-sm-12">
+                    <div class="about-text">
+                        <h3>About us</h3>
+                        <p class="lead">Shemaroo Entertainment Limited is a leading Indian content power house with a global reach, which
+                            has been playing a pioneering role in the arena of content ownership, aggregation and distribution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="ContactUsForm" class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+                <div class="form_main">
+                    <h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>
+                    <div class="form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Phone</label>
+                                    <input type="text" class="form-control" id="inputPassword4" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Address 2</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small blue pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Copyright @2018 Shemaroo.com</p>
+                    <p>Coded by <a href="sapient.com">Sapient XT</a> </p>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="list-unstyled">
+                        <li> <a href="facebook.com" target="_blank"><i class="fab fa-facebook"></i> facebook</a></li>
+                        <li><a href="google.com" target="_blank"> <i class="fab fa-google"></i> Google</a></li>
+                        <li><a href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a> </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>A Little about us</h5>
+                    <p>Today,We, The Shemaroo has evolved to be a significant player in the digital ecosystem. The entry into
+                        the Limca Book of Records with #FilmiGaaneAntakshari on Twitter is a proof of Shemaroo staying true
+                        to its ‘digital first’ vision..</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="dist/bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>

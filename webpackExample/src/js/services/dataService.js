@@ -8,6 +8,7 @@ export class DataService {
     }
 
     logJSON(url) {
+         this.fetchOptions.method = "POST";
         fetch(url, this.fetchOptions)
             .then(res => {
                 res.json().then(data => {

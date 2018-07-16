@@ -1,0 +1,79 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "title": "South Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }, 
+    {
+      "id": 2,
+      "title": "North Delights",
+      "author": "mahi"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

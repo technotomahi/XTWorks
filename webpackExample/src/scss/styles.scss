@@ -11,6 +11,7 @@ $nav-bg-color: #e7f4f9;
 
 #main-nav {
   background-color: $nav-bg-color;
+  margin-bottom: 15px;
 }
 
 .carousel-caption {
@@ -22,9 +23,17 @@ $nav-bg-color: #e7f4f9;
 }
 
 .card {
-  margin-top: 10px;
+  margin: 10px;
+  min-width: 200px;
+  height: 150px; 
+  background-color: #fbf8f8;
 }
 
+
+.floating-card-deck
+{
+  align-content: flex-start;
+}
 a.nav-link
 {
     font-weight: 700;
@@ -73,7 +82,7 @@ footer a {
 
 @media (max-width: 40em) {
   .carousel-caption p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem; 
     font-size: 0.25rem;
     line-height: 1.4;
   }
@@ -81,4 +90,30 @@ footer a {
 
 .roundedCorner{
     @include roundedborder;
+}
+
+
+// Dashboard
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+input[name=search1] {
+    width: 330px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[name=search1]:focus {
+    width: 100%;
+}
+
+.hide
+{
+  display: none;
 }
