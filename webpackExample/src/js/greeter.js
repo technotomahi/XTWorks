@@ -1,6 +1,6 @@
-export  class Greater
+class Greeter1
 {
-    
+    //console.log("Hi");
     constructor (greeting)
     {
         this.greeting = greeting; 
@@ -14,3 +14,5 @@ export  class Greater
 
     }
 }
+
+// export default Greater;
