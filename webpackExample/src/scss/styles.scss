@@ -1,45 +1,3 @@
-.green
-{
-    color: green;
-}
-
-$nav-bg-color: #e7f4f9;
-
-.section-content {
-  padding: 5rem 0;
-}
-
-#main-nav {
-  background-color: $nav-bg-color;
-  margin-bottom: 15px;
-}
-
-.carousel-caption {
-  max-width: 550px;
-  padding: 0 20px;
-  margin: 0 auto;
-  top: 20%;
-  text-align: center;
-}
-
-.card {
-  margin: 10px;
-  min-width: 200px;
-  min-height: 150px; 
-  background-color: #fbf8f8;
-}
-
-
-.floating-card-deck
-{
-  align-content: flex-start;
-}
-a.nav-link
-{
-    font-weight: 700;
-    color: black;
-}
-
 @mixin roundedborder($radius:0.9em) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -55,14 +13,7 @@ img.logo {
   @include roundedborder;
   padding: 0.5rem;
 }
-
-footer {
-  background-color: #222;
-  color: white;
-  margin-top: 2rem;
-  padding: 2rem;
-}
-
+ 
 
 footer a {
   color: white;
@@ -117,3 +68,6 @@ input[name=search1]:focus {
 {
   display: none;
 }
+
+@import "layout"; 
+@import "base";

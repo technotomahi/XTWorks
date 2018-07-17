@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+    <input type="hidden" id="pagingSkip" name="custId" value="0">
     <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-blue">
         <img src="src/img/logo1.png" class="logo img-fluid" alt="Shemaroo Company logo">
         <a class="navbar-brand" href="http://sapient.com">Shemaroo</a>
@@ -68,8 +68,17 @@
                 </div>
             </div>
         </div>
-        <div id="ResultContainer">
-            <div class="col-sm-12">
+        <div class="row">
+            <div id="ResultContainer" class="col-sm-12">
+                <!-- <div class="row">
+                    <div  class="col-sm-12 col-sm-6">
+                        <img src="https://d.zmtcdn.com/data/pictures/chains/8/16774318/a54deb9e4dbb79dd7c8091b30c642077_featured_v2.png" alt="">
+                    </div>
+                     <div  class="col-sm-12 col-sm-6">
+                         <p>Name: Name</p>
+                      
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -87,139 +96,20 @@
                 <div class="row">
                     <div class="container-fluid">
                         <div id="collectionContainer" class="card-deck floating-card-deck">
-                            <!-- <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Music is tune</h5>
-                                    <p class="card-text"> is a little bit longer.</p>
-                                </div>
-                            </div>                             -->
-
                         </div>
                     </div>
                 </div>
             </div>
         </section-content>
     </section>
-    <!-- <div class="container">
-        <div class="js-search-result-li even  status 1" data-res_id="18382360" data-position="1-3" data-trprovider="MEDIO_ZOMATO">
-            <article class="search-result  ">
 
-                <div class="pos-relative clearfix    ">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="search_left_featured clearfix">
-                                <a href="https://www.zomato.com/ncr/local-connaught-place-new-delhi/info" class="feat-img" style="background-image: url(&quot;https://b.zmtcdn.com/data/pictures/0/18382360/4aec3b767f5547a82e758b413b39f4e2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A&quot;); background-repeat: repeat; display: block;"
-                                    data-original="https://b.zmtcdn.com/data/pictures/0/18382360/4aec3b767f5547a82e758b413b39f4e2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6  col-md-12  pl0  ">
-                            <div class="zgold col-l-5 fontsize5">
-                                <div class="row">SPONSORED</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="res-snippet-small-establishment mt5" style="margin-bottom: 7px;">
-                                        <a title="Bars in Delhi NCR" href="https://www.zomato.com/ncr/bar " class="zdark ttupper fontsize6">Bar</a>
-                                        <span class="zdark mr5">,</span>
-                                        <a title="Casual Dining in Delhi NCR" href="https://www.zomato.com/ncr/casual-dining "
-                                            class="zdark ttupper fontsize6">Casual Dining</a>
-                                    </div>
-
-                                    <a class="result-title hover_feedback zred bold ln24   fontsize0 " href="https://www.zomato.com/ncr/local-connaught-place-new-delhi"
-                                        title="local Restaurant, Connaught Place" data-result-type="ResCard_Name">Local
-                                    </a>
-                                    <div class="clear"></div>
-
-                                    <a class="ln24 search-page-text mr10 zblack search_result_subzone left" href="https://www.zomato.com/ncr/connaught-place-delhi-restaurants"
-                                        title="Restaurants in Connaught Place">
-                                        <b>Connaught Place</b>
-                                    </a>
-
-                                </div>
-                                <div class="ta-right floating search_result_rating col-s-4 clearfix" style="line-height: 14px;">
-                                    <div data-res-id="18382360" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18382360 res-rating-nf right level-6 bold">
-                                        3.9
-                                    </div>
-                                    <div class="clear mb5"></div>
-
-                                    show the vote count only if there's a rating 
-                                    <span class="rating-votes-div-18382360 grey-text fontsize5">2572 votes</span>
-
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div style=" max-width:370px; " class="col-m-16 search-result-address grey-text nowrap ln22" title="11, KG Marg, Scindia House, Connaught Place, New Delhi">
-                                11, KG Marg, Scindia House, Connaught Place, New Delhi</div>
-                            </div>
-
-                            <div style="display:inline-flex;align-items: center;">
-                                <div class="red_res_tag">
-                                    <img src="https://www.zomato.com//images/red/gold_blue_tag_2_en.png" width="100px" style="margin:4px 0 0">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="ui divider"></div>
-
-                <div class="search-page-text clearfix row">
-                    <div class="clearfix">
-                        <span class="col-sm-5 col-md-4 ttupper fontsize5 grey-text">Cuisines: </span>
-                        <span class="col-sm-11 col-md-12 nowrap  pl0">
-                            <a title="North Indian" href="https://www.zomato.com/ncr/restaurants/north-indian">North Indian</a>,
-                            <a title="Continental" href="https://www.zomato.com/ncr/restaurants/continental">Continental</a>
-                        </span>
-                    </div>
-
-                    <div class="res-cost clearfix">
-                        <span class="col-sm-5 col-md-4 ttupper fontsize5 grey-text">Cost for two:</span>
-                        <span class="col-sm-11 col-md-12 pl0">₹1,600</span>
-                    </div>
-
-                    <div class="res-timing clearfix" title="12 Noon to 1 AM">
-                        <span class="col-sm-5 col-md-4 ttupper   fontsize5  grey-text left">Hours:</span>
-                        <div class="col-sm-11 col-md-12 pl0 search-grid-right-text ">
-                            12Noon to 1AM (Mon-Sun)
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-                    <div class="res-collections clearfix">
-                        <span class="col-sm-5 col-md-4 ttupper   fontsize5  grey-text">Featured in: </span>
-                        <div class="col-sm-11 col-md-12 pl0 search-grid-right-text ">
-                            <a href="/ncr/best-bars-and-pubs">Best bars &amp; pubs</a>,
-                            <a href="/ncr/popular-gold-restaurants">Popular Gold restaurants</a>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                </div>
-
-
-
-
-
-
-            </article>
-        </div>
-    </div>
-    <section> 
-    -->
     <div class="section-content">
         <div id="AboutUs" class="container">
             <div class="col-sm-12">
                 <div class="about-text">
                     <h3>About us</h3>
-                    <p class="lead">Shemaroo Entertainment Limited is a leading Indian content power house with a global reach, which has
-                        been playing a pioneering role in the arena of content ownership, aggregation and distribution.
+                    <p class="lead">Foodie Lovers Limited is a leading tool maker with a global reach, which has been playing a pioneering
+                        role in the arena of customizing softwares for hobbies like movie list and food habit list.
                     </p>
                 </div>
             </div>
@@ -261,8 +151,8 @@
                                 <label for="inputAddress">Address</label>
                                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                             </div>
-                
- 
+
+
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </form>
                     </div>
@@ -286,19 +176,15 @@
                             <label for="collection-name" class="col-form-label">Collection Name:</label>
                             <input type="text" class="form-control" id="collection-name">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group search-fields">
                             <label for="restaurant-name" class="col-form-label">Search a Restaurant Name:</label>
                             <input type="text" class="form-control" id="restaurant-name-search">
                         </div>
-                        <div class="form-group" id="restaurants-container-modal">
+                        <div class="form-group search-fields" id="restaurants-container-modal">
                             <label for="message-text" class="col-form-label">Restaurants:</label>
                             <div class="checkbox">
                                 <label>
-                                    <input class="restaurantCheckbox" type="checkbox" value="">Restaurant 1</label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">Restaurant 2</label>
+                                    <input class="restaurantCheckbox" type="checkbox" value="">Sample Restaurant 1</label>
                             </div>
 
                         </div>
@@ -307,6 +193,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" id="add-collection" class="btn btn-primary">Add Collection</button>
+                    <button type="button" id="update-collection" class="btn btn-primary" style="display:none">Update Collection</button>
                 </div>
             </div>
         </div>
@@ -355,16 +242,16 @@
                 </div>
                 <div class="col-sm-3">
                     <h5>A Little about us</h5>
-                    <p>Today,We, The Shemaroo has evolved to be a significant player in the digital ecosystem. The entry into
-                        the Limca Book of Records with #FilmiGaaneAntakshari on Twitter is a proof of Shemaroo staying true
-                        to its ‘digital first’ vision..</p>
+                    <p>Foodie Lovers Limited is a leading tool maker with a global reach, which has been playing a pioneering
+                        role in the arena of customizing softwares for hobbies like movie list and food habit list.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script type="text/javascript" src="dist/bundle.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>

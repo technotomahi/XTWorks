@@ -4,10 +4,12 @@ import { CollectionService } from "../services/collectionService";
 export class CollectionController {
   constructor() {
     this.collectionService = new CollectionService();
+    this.sourceCollectionId = 0;
+    this.targetCollectionId = 0;
+    this.targetRestaurantId = 0;
   }
 
   searchCollections() {
-
     this.collectionService
       .getCollections()
       .then(data => {
@@ -17,11 +19,9 @@ export class CollectionController {
       .catch(err => {
         console.log(err);
       });
-
   }
 
   addCollection(payload) {
-
     this.collectionService
       .addCollection(payload)
       .then(data => {
@@ -32,10 +32,25 @@ export class CollectionController {
       .catch(err => {
         console.log(err);
       });
-
   }
 
-/**
+  updateCollection(payload) {
+    this.collectionService
+      .updateCollection(payload)
+      .then(data => {
+        debugger;
+        console.log(data);
+        DomManager.cleanCollectionModal();
+        document.getElementById(
+          "card-title-" + data.id
+        ).innerHTML = `<i class="far fa-edit" style="float: right;"></i>${data.title}`;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  /**
 * Displays user's favourite collections
 * @param {*Collections Data} data 
 */
@@ -66,21 +81,72 @@ export class CollectionController {
     let collectionContainer = document.getElementById("collectionContainer");
     document.getElementById("collectionContainer").innerHTML = "";
     data.forEach(dataItem => {
-      var card = DomManager.getACard(dataItem.title, dataItem.restaurants);
+      var card = DomManager.getACard(
+        dataItem.id,
+        dataItem.title,
+        dataItem.restaurants
+      );
       collectionContainer.appendChild(card);
+    });
+    var collectionController = new CollectionController();
+    collectionController.addDragability();
+  }
+
+  addDragability() {
+    $(function() {
+      $(".connectedSortable")
+        .sortable({
+          connectWith: ".connectedSortable",
+          start: function(event, ui) {
+            this.sourceCollectionId = ui.item[0].parentElement.getAttribute(
+              "data-info"
+            );
+          },
+          receive: function(event, ui) {
+            var group = event.target;
+            var resultRestaurants = [];
+            event.target.childNodes.forEach(p => {
+              resultRestaurants.push(p.getAttribute("data-info"));
+            });
+            debugger;
+            var index = resultRestaurants.findIndex(function(item) {
+              return item == ui.item[0].getAttribute("data-info");
+            });
+            window.targetPositionId = index;
+          },
+          stop: function(event, ui) {
+            this.targetCollectionId = ui.item[0].parentElement.getAttribute(
+              "data-info"
+            );
+            console.log("Source Collection id" + this.sourceCollectionId);
+            this.collectionService = new CollectionService();
+            debugger;
+            var self = this;
+            this.collectionService.UpdateCollections(
+              this.sourceCollectionId,
+              this.targetCollectionId,
+              {
+                id: ui.item[0].getAttribute("data-info"),
+                name: ui.item[0].innerHTML
+              },
+              window.targetPositionId
+            );
+          }
+        })
+        .disableSelection();
     });
   }
 
   AddToCollection(dataItem) {
     let collectionContainer = document.getElementById("collectionContainer");
-    var card = DomManager.getACard(dataItem.title, dataItem.restaurants);
+    var card = DomManager.getACard(
+      dataItem.id,
+      dataItem.title,
+      dataItem.restaurants
+    );
     collectionContainer.appendChild(card);
-    $('#collectionModal').modal('toggle')
+    $("#collectionModal").modal("toggle");
+    var collectionController = new CollectionController();
+    collectionController.addDragability();
   }
-
-
-
-
 }
-
-
