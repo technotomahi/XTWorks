@@ -13,15 +13,26 @@ var collectionController = new CollectionController();
 var searchBotton = document.getElementById("searchRestaurant");
 var myCollectionsLink = document.getElementById("MyCollections");
 var restaurantsLink = document.getElementById("RestaurantsLink");
+var restaurantsSearchModlaLink = document.getElementById("restaurant-name-search");
+var addCollectionBotton = document.getElementById("add-collection");
+
+
 
 searchBotton.addEventListener("click", searchRestaurants);
 myCollectionsLink.addEventListener("click", searchCollections);
 restaurantsLink.addEventListener("click", onClickSearchRestaurants);
+restaurantsSearchModlaLink.addEventListener("keyup", onKeyUpSearchRestaurants);
+addCollectionBotton.addEventListener("click", addCollection);
 
 function onClickSearchRestaurants() {
   activateView("restaurants");
   $("#searchForm").show();
   document.getElementById("inputSearch").focus();
+}
+
+function onKeyUpSearchRestaurants() {
+  var searchParam = document.getElementById("restaurant-name-search").value;
+  restaurantController.searchRestaurantsForModal(searchParam);
 }
 
 function searchRestaurants() {
@@ -37,6 +48,20 @@ function searchRestaurants() {
 function searchCollections() {
   activateView("collections");
   collectionController.searchCollections();
+}
+
+function addCollection() {
+  let collectionName = document.getElementById("collection-name").value;
+  var restaturantIds = $('.restaurantCheckbox:checked')
+    .map(function () {
+      return $(this).val();
+    }).get();
+  let payload = {
+    title: collectionName,
+    author: "Mahi", 
+    restaurants: restaturantIds
+  };
+  collectionController.addCollection(payload);
 }
 
 $(document).ready(function () { });

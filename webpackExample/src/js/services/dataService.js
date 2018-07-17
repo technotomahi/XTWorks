@@ -36,8 +36,9 @@ export class DataService {
             
     }
 
-     postJSON(url) {
+     postJSON(url, payload) {
          this.fetchOptions.method = "POST";
+         this.fetchOptions.body =   JSON.stringify( payload );
         var dataPromise = fetch(url, this.fetchOptions);
         return new Promise((resolve, reject) => {
             dataPromise.then(res => {

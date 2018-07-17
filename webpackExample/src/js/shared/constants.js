@@ -12,6 +12,10 @@ export class Constants {
         return this.COLLECTIONS_API_BASE + 'collections';;
     }
 
+    static get ADD_COLLECTIONS_URL() {
+        return this.COLLECTIONS_API_BASE + 'collections';;
+    }
+
     static get RESTAURANTS_SEARCH_URL() {
         return this.ZOMATO_API_BASE + 'search';;
     }

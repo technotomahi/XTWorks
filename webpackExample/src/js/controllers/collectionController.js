@@ -20,6 +20,21 @@ export class CollectionController {
 
   }
 
+  addCollection(payload) {
+
+    this.collectionService
+      .addCollection(payload)
+      .then(data => {
+        console.log(data);
+        this.AddToCollection(data);
+        DomManager.cleanCollectionModal();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+  }
+
 /**
 * Displays user's favourite collections
 * @param {*Collections Data} data 
@@ -51,9 +66,16 @@ export class CollectionController {
     let collectionContainer = document.getElementById("collectionContainer");
     document.getElementById("collectionContainer").innerHTML = "";
     data.forEach(dataItem => {
-      var card = DomManager.getACard(dataItem.title, dataItem.author);
+      var card = DomManager.getACard(dataItem.title, dataItem.restaurants);
       collectionContainer.appendChild(card);
     });
+  }
+
+  AddToCollection(dataItem) {
+    let collectionContainer = document.getElementById("collectionContainer");
+    var card = DomManager.getACard(dataItem.title, dataItem.restaurants);
+    collectionContainer.appendChild(card);
+    $('#collectionModal').modal('toggle')
   }
 
 

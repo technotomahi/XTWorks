@@ -26,7 +26,9 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Login
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Register</a>
@@ -57,7 +59,7 @@
                                 <input type="text" class="form-control" id="inputSearch" value="udupi" placeholder="Search for a restaurant or Cuisine in your city.."></input>
                             </div>
                             <div class="form-group col-md-1">
-                                <button id="searchRestaurant" type="submit" class="btn btn-dark">   Search</button>
+                                <button id="searchRestaurant" type="submit" class="btn btn-dark"> Search</button>
                             </div>
                         </div>
 
@@ -75,11 +77,13 @@
     <section id="collection-section" style="display:none">
         <section-content class="section-content">
             <div class="container">
-                <h2>My Favourite Collections </h2>
+                <h4>My Favourite Collections </h4>
                 <p class="lead">
                     Here you list down your favourite restaurant collections. This will help you to quickly look around and select your collection
                     based on your mood.
                 </p>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#collectionModal" data-whatever="@getbootstrap">Add New Collection</button>
+
                 <div class="row">
                     <div class="container-fluid">
                         <div id="collectionContainer" class="card-deck floating-card-deck">
@@ -96,20 +100,131 @@
             </div>
         </section-content>
     </section>
+    <!-- <div class="container">
+        <div class="js-search-result-li even  status 1" data-res_id="18382360" data-position="1-3" data-trprovider="MEDIO_ZOMATO">
+            <article class="search-result  ">
 
-    <section>
-        <div class="section-content">
-            <div id="AboutUs" class="container">
-                <div class="col-sm-12">
-                    <div class="about-text">
-                        <h3>About us</h3>
-                        <p class="lead">Shemaroo Entertainment Limited is a leading Indian content power house with a global reach, which
-                            has been playing a pioneering role in the arena of content ownership, aggregation and distribution.
-                        </p>
+                <div class="pos-relative clearfix    ">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="search_left_featured clearfix">
+                                <a href="https://www.zomato.com/ncr/local-connaught-place-new-delhi/info" class="feat-img" style="background-image: url(&quot;https://b.zmtcdn.com/data/pictures/0/18382360/4aec3b767f5547a82e758b413b39f4e2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A&quot;); background-repeat: repeat; display: block;"
+                                    data-original="https://b.zmtcdn.com/data/pictures/0/18382360/4aec3b767f5547a82e758b413b39f4e2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6  col-md-12  pl0  ">
+                            <div class="zgold col-l-5 fontsize5">
+                                <div class="row">SPONSORED</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="res-snippet-small-establishment mt5" style="margin-bottom: 7px;">
+                                        <a title="Bars in Delhi NCR" href="https://www.zomato.com/ncr/bar " class="zdark ttupper fontsize6">Bar</a>
+                                        <span class="zdark mr5">,</span>
+                                        <a title="Casual Dining in Delhi NCR" href="https://www.zomato.com/ncr/casual-dining "
+                                            class="zdark ttupper fontsize6">Casual Dining</a>
+                                    </div>
+
+                                    <a class="result-title hover_feedback zred bold ln24   fontsize0 " href="https://www.zomato.com/ncr/local-connaught-place-new-delhi"
+                                        title="local Restaurant, Connaught Place" data-result-type="ResCard_Name">Local
+                                    </a>
+                                    <div class="clear"></div>
+
+                                    <a class="ln24 search-page-text mr10 zblack search_result_subzone left" href="https://www.zomato.com/ncr/connaught-place-delhi-restaurants"
+                                        title="Restaurants in Connaught Place">
+                                        <b>Connaught Place</b>
+                                    </a>
+
+                                </div>
+                                <div class="ta-right floating search_result_rating col-s-4 clearfix" style="line-height: 14px;">
+                                    <div data-res-id="18382360" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18382360 res-rating-nf right level-6 bold">
+                                        3.9
+                                    </div>
+                                    <div class="clear mb5"></div>
+
+                                    show the vote count only if there's a rating 
+                                    <span class="rating-votes-div-18382360 grey-text fontsize5">2572 votes</span>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div style=" max-width:370px; " class="col-m-16 search-result-address grey-text nowrap ln22" title="11, KG Marg, Scindia House, Connaught Place, New Delhi">
+                                11, KG Marg, Scindia House, Connaught Place, New Delhi</div>
+                            </div>
+
+                            <div style="display:inline-flex;align-items: center;">
+                                <div class="red_res_tag">
+                                    <img src="https://www.zomato.com//images/red/gold_blue_tag_2_en.png" width="100px" style="margin:4px 0 0">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+
+                <div class="ui divider"></div>
+
+                <div class="search-page-text clearfix row">
+                    <div class="clearfix">
+                        <span class="col-sm-5 col-md-4 ttupper fontsize5 grey-text">Cuisines: </span>
+                        <span class="col-sm-11 col-md-12 nowrap  pl0">
+                            <a title="North Indian" href="https://www.zomato.com/ncr/restaurants/north-indian">North Indian</a>,
+                            <a title="Continental" href="https://www.zomato.com/ncr/restaurants/continental">Continental</a>
+                        </span>
+                    </div>
+
+                    <div class="res-cost clearfix">
+                        <span class="col-sm-5 col-md-4 ttupper fontsize5 grey-text">Cost for two:</span>
+                        <span class="col-sm-11 col-md-12 pl0">₹1,600</span>
+                    </div>
+
+                    <div class="res-timing clearfix" title="12 Noon to 1 AM">
+                        <span class="col-sm-5 col-md-4 ttupper   fontsize5  grey-text left">Hours:</span>
+                        <div class="col-sm-11 col-md-12 pl0 search-grid-right-text ">
+                            12Noon to 1AM (Mon-Sun)
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="res-collections clearfix">
+                        <span class="col-sm-5 col-md-4 ttupper   fontsize5  grey-text">Featured in: </span>
+                        <div class="col-sm-11 col-md-12 pl0 search-grid-right-text ">
+                            <a href="/ncr/best-bars-and-pubs">Best bars &amp; pubs</a>,
+                            <a href="/ncr/popular-gold-restaurants">Popular Gold restaurants</a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </article>
+        </div>
+    </div>
+    <section> 
+    -->
+    <div class="section-content">
+        <div id="AboutUs" class="container">
+            <div class="col-sm-12">
+                <div class="about-text">
+                    <h3>About us</h3>
+                    <p class="lead">Shemaroo Entertainment Limited is a leading Indian content power house with a global reach, which has
+                        been playing a pioneering role in the arena of content ownership, aggregation and distribution.
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
     </section>
 
     <section class="jumbotron text-center">
@@ -126,7 +241,10 @@
         <div class="row">
             <div class="col-md-offset-3 col-md-10">
                 <div class="form_main">
-                    <h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>
+                    <h4 class="heading">
+                        <strong>Quick </strong> Book a Table
+                        <span></span>
+                    </h4>
                     <div class="form">
                         <form>
                             <div class="form-row">
@@ -143,24 +261,52 @@
                                 <label for="inputAddress">Address</label>
                                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                             </div>
-                            <div class="form-group">
-                                <label for="inputAddress2">Address 2</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
-                                </div>
-
-                                <div class="form-group col-md-2">
-                                    <label for="inputZip">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip">
-                                </div>
-                            </div>
+                
+ 
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="collectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="collectionModalLabel">Collection</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="collection-name" class="col-form-label">Collection Name:</label>
+                            <input type="text" class="form-control" id="collection-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="restaurant-name" class="col-form-label">Search a Restaurant Name:</label>
+                            <input type="text" class="form-control" id="restaurant-name-search">
+                        </div>
+                        <div class="form-group" id="restaurants-container-modal">
+                            <label for="message-text" class="col-form-label">Restaurants:</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="restaurantCheckbox" type="checkbox" value="">Restaurant 1</label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Restaurant 2</label>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="add-collection" class="btn btn-primary">Add Collection</button>
                 </div>
             </div>
         </div>
@@ -170,7 +316,9 @@
             <div class="row">
                 <div class="col-sm-3">
                     <p>Copyright @2018 Shemaroo.com</p>
-                    <p>Coded by <a href="sapient.com">Sapient XT</a> </p>
+                    <p>Coded by
+                        <a href="sapient.com">Sapient XT</a>
+                    </p>
                 </div>
                 <div class="col-sm-3">
                     <ul class="list-unstyled">
@@ -187,10 +335,22 @@
                 </div>
                 <div class="col-sm-3">
                     <ul class="list-unstyled">
-                        <li> <a href="facebook.com" target="_blank"><i class="fab fa-facebook"></i> facebook</a></li>
-                        <li><a href="google.com" target="_blank"> <i class="fab fa-google"></i> Google</a></li>
-                        <li><a href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a> </li>
+                        <li>
+                            <a href="facebook.com" target="_blank">
+                                <i class="fab fa-facebook"></i> facebook</a>
+                        </li>
+                        <li>
+                            <a href="google.com" target="_blank">
+                                <i class="fab fa-google"></i> Google</a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com" target="_blank">
+                                <i class="fab fa-twitter"></i> Twitter</a>
+                        </li>
+                        <li>
+                            <a href="linkedin.com" target="_blank">
+                                <i class="fab fa-linkedin"></i> Linkedin</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
