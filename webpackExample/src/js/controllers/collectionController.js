@@ -35,15 +35,28 @@ export class CollectionController {
   }
 
   updateCollection(payload) {
+    ;
     this.collectionService
       .updateCollection(payload)
       .then(data => {
-        debugger;
         console.log(data);
         DomManager.cleanCollectionModal();
         document.getElementById(
           "card-title-" + data.id
-        ).innerHTML = `<i class="far fa-edit" style="float: right;"></i>${data.title}`;
+        ).innerHTML = `<i class="far fa-edit" style="float: right;"></i>${
+          data.title
+        }`;
+        var cardItemsWrapper = document.getElementById(
+          `restaurant-items-col-${data.id}`
+        );
+        cardItemsWrapper.innerHTML = "";
+        data.restaurants.forEach(restaurant => {
+          var cardText = document.createElement("p");
+          cardText.setAttribute("data-info", `${restaurant.id}`);
+          cardText.appendChild(document.createTextNode(restaurant.name));
+          cardText.className = "card-text";
+          cardItemsWrapper.appendChild(cardText);
+        });
       })
       .catch(err => {
         console.log(err);
@@ -51,14 +64,13 @@ export class CollectionController {
   }
 
   /**
-* Displays user's favourite collections
-* @param {*Collections Data} data 
-*/
+   * Displays user's favourite collections
+   * @param {*Collections Data} data
+   */
   displayCollections(data) {
     console.log(data);
     let searchForm = document.getElementById("searchForm");
 
-    //searchForm.className("hide");
     let resultscontainer = document.getElementById("ResultContainer");
     resultscontainer.innerHTML = "";
     var totalitemsFound = data.length;
@@ -108,7 +120,7 @@ export class CollectionController {
             event.target.childNodes.forEach(p => {
               resultRestaurants.push(p.getAttribute("data-info"));
             });
-            debugger;
+            ;
             var index = resultRestaurants.findIndex(function(item) {
               return item == ui.item[0].getAttribute("data-info");
             });
@@ -120,7 +132,7 @@ export class CollectionController {
             );
             console.log("Source Collection id" + this.sourceCollectionId);
             this.collectionService = new CollectionService();
-            debugger;
+            ;
             var self = this;
             this.collectionService.UpdateCollections(
               this.sourceCollectionId,

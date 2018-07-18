@@ -23,6 +23,7 @@ export class CollectionService {
       .getJSON(collectionUrl + "/" + payload.id)
       .then(data => {
         data.title = payload.title;
+        data.restaurants = payload.restaurants;
         return this.UpdateCollection(data);
       })
       .catch(err => {
@@ -45,7 +46,7 @@ export class CollectionService {
         var index = data.restaurants.findIndex(function(item) {
           return item.id == restaurant.id;
         });
-        debugger;
+        ;
         data.restaurants.splice(index, 1);
         this.UpdateCollection(data);
       })
@@ -57,7 +58,7 @@ export class CollectionService {
     this.dataService
       .getJSON(collectionUrl + "/" + targetCollectionId)
       .then(data => {
-        debugger;
+        ;
         data.restaurants.splice(targetPositionId, 0, restaurant);
         this.UpdateCollection(data);
       })

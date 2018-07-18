@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shemarroo Redesigned</title>
+    <title>Food Tracker</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -16,8 +16,8 @@
 <body>
     <input type="hidden" id="pagingSkip" name="custId" value="0">
     <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-blue">
-        <img src="src/img/logo1.png" class="logo img-fluid" alt="Shemaroo Company logo">
-        <a class="navbar-brand" href="http://sapient.com">Shemaroo</a>
+        <img src="src/img/logo1.png" class="logo img-fluid" alt="Food Tracker Company logo">
+        <a class="navbar-brand" href="http://sapient.com">Food Tracker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,11 +51,11 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label class="sr-only" for="inputEmail4">City</label>
+                                <label class="sr-only" for="inputCity">City</label>
                                 <input type="text" class="form-control" id="inputCity" value="Bangalore" placeholder="Bangalore">
                             </div>
                             <div class="form-group col-md-8">
-                                <label class="sr-only" for="inputPassword4">Restaurants</label>
+                                <label class="sr-only" for="inputSearch">Restaurants</label>
                                 <input type="text" class="form-control" id="inputSearch" value="udupi" placeholder="Search for a restaurant or Cuisine in your city.."></input>
                             </div>
                             <div class="form-group col-md-1">
@@ -69,16 +69,15 @@
             </div>
         </div>
         <div class="row">
-            <div id="ResultContainer" class="col-sm-12">
-                <!-- <div class="row">
-                    <div  class="col-sm-12 col-sm-6">
-                        <img src="https://d.zmtcdn.com/data/pictures/chains/8/16774318/a54deb9e4dbb79dd7c8091b30c642077_featured_v2.png" alt="">
-                    </div>
-                     <div  class="col-sm-12 col-sm-6">
-                         <p>Name: Name</p>
-                      
-                    </div>
-                </div> -->
+            <div class="container-fluid">
+                <div id="ResultContainer" class="card-deck floating-card-deck">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div id="ResultNavigationContainer" >
+                </div>
             </div>
         </div>
     </div>
@@ -176,16 +175,13 @@
                             <label for="collection-name" class="col-form-label">Collection Name:</label>
                             <input type="text" class="form-control" id="collection-name">
                         </div>
-                        <div class="form-group search-fields">
-                            <label for="restaurant-name" class="col-form-label">Search a Restaurant Name:</label>
+                        <div id="restaurant-name-search-fields" class="form-group search-fields">
+                            <label id="restaurant-name-search-label" for="restaurant-name" class="col-form-label">Search a Restaurant Name:</label>
                             <input type="text" class="form-control" id="restaurant-name-search">
                         </div>
                         <div class="form-group search-fields" id="restaurants-container-modal">
                             <label for="message-text" class="col-form-label">Restaurants:</label>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="restaurantCheckbox" type="checkbox" value="">Sample Restaurant 1</label>
-                            </div>
+                            
 
                         </div>
                     </form>
@@ -194,6 +190,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" id="add-collection" class="btn btn-primary">Add Collection</button>
                     <button type="button" id="update-collection" class="btn btn-primary" style="display:none">Update Collection</button>
+                    <button type="button" id="delete-collection" class="btn btn-primary" style="display:none">Delete from Collection</button>
                 </div>
             </div>
         </div>
@@ -202,9 +199,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <p>Copyright @2018 Shemaroo.com</p>
+                    <p>Copyright @2018 FoodTracker.com</p>
                     <p>Coded by
-                        <a href="sapient.com">Sapient XT</a>
+                        <a href="sapient.com">@techno2mahi</a>
                     </p>
                 </div>
                 <div class="col-sm-3">

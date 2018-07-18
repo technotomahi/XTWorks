@@ -10,7 +10,7 @@ export class RestaurantService {
     this.dataService.fetchOptions.method = "GET";
     let queryParams = `?entity_id=${cityId}&entity_type=city&q=${encodeURI(
       query
-    )}&count=10&start=${offset}`;
+    )}&count=${Constants.PAGING_COUNT}&start=${offset}`;
     let searchUrl = Constants.RESTAURANTS_SEARCH_URL;
     searchUrl = searchUrl + queryParams;
     return this.dataService.getJSON(searchUrl);

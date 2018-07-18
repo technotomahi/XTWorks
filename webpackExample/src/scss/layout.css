@@ -31,11 +31,14 @@
 {
   align-content: flex-start;
 }
+
 a.nav-link
 {
     font-weight: 700;
     color: black;
 }
+
+
 
 .previous {
     background-color: #f1f1f1;

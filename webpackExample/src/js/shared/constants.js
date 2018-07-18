@@ -19,7 +19,15 @@ export class Constants {
     return this.ZOMATO_API_BASE + "search";
   }
 
+  static get ZOMATO_DEFAULT_IMAGE() {
+    return "https://b.zmtcdn.com/data/pictures/6/18011656/95177ed226010a6be13935df30d552e4.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A";
+  }
+
   static get ZOMATO_AUTH_KEY() {
     return "d9ccd37d2d650e0f24917ab3ea4126be";
+  }
+
+  static get PAGING_COUNT() {
+    return 8;
   }
 }

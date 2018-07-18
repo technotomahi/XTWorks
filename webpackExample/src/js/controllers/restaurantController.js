@@ -32,11 +32,15 @@ export class RestaurantController {
 
   displayRestaurants(restData, searchParam) {
     let searchResultsPlaceholder = document.getElementById("ResultContainer");
+    let resultNavigationContainer = document.getElementById(
+      "ResultNavigationContainer"
+    );
+
     searchResultsPlaceholder.innerHTML = "";
     var totalitemsFound = restData.results_found;
-    debugger;
+    var paraNode;
     if (totalitemsFound == 0 || restData.results_shown == 0) {
-      var paraNode = DomManager.getAParaNode(
+      paraNode = DomManager.getAParaNode(
         "Oops, Your search returned no results !!",
         "text-danger"
       );
@@ -44,46 +48,41 @@ export class RestaurantController {
       searchResultsPlaceholder.appendChild(paraNode);
       return;
     } else {
-      var paraNode = DomManager.getAParaNode(
+      paraNode = DomManager.getAParaNode(
         `Showing ${restData.results_start} - ${restData.results_start +
-          10} of ${totalitemsFound} restaurants found.`,
+          Constants.PAGING_COUNT} of ${totalitemsFound} restaurants found.`,
         "text-success"
       );
-      searchResultsPlaceholder.appendChild(paraNode);
     }
 
     var ulElement = document.createElement("ul");
 
     restData.restaurants.forEach(restaurantItem => {
-      var liElement = document.createElement("li");
+      var restCard = DomManager.getADetailedCard(
+        restaurantItem.restaurant.name,
+        restaurantItem.restaurant.thumb,
+        this.getRequiredRestaurantDetails(restaurantItem.restaurant)
+      );
 
-      var anchor = document.createElement("a");
-
-      var text = document.createTextNode(`${restaurantItem.restaurant.name} (
-              ${restaurantItem.restaurant.location.locality} , ${restaurantItem
-        .restaurant.location.city})`);
-      anchor.setAttribute("href", "#");
-      anchor.appendChild(text);
       var self = this;
-      anchor.addEventListener("click", function() {
+      restCard.addEventListener("click", function() {
         var id = restaurantItem.restaurant.id;
         //activateView("restaurant");
         let url =
-          "https://developers.zomato.com/api/v2.1/restaurant?res_id=60192";
+          "https://developers.zomato.com/api/v2.1/restaurant?res_id=" + id;
+        var dataService = new DataService(Constants.ZOMATO_AUTH_KEY);
         self.dataService
           .getJSON(url)
           .then(data => {
             console.log(data);
             self.displayRestaurantDetail(data);
+            resultNavigationContainer.innerHTML = "";
           })
           .catch(err => {
             console.log(err);
           });
       });
-
-      //liElement.inneerHTML =  restaurantItem.restaurant.name;
-      liElement.appendChild(anchor);
-      ulElement.appendChild(liElement);
+      searchResultsPlaceholder.appendChild(restCard);
     });
 
     var prevAnchor = document.createElement("a");
@@ -96,31 +95,35 @@ export class RestaurantController {
 
     // Next Element
     var lastNextSkippCount = 0;
-    
-    nextAnchor.setAttribute("data-info", `${document.getElementById("pagingSkip").value}`);
+
+    nextAnchor.setAttribute(
+      "data-info",
+      `${document.getElementById("pagingSkip").value}`
+    );
 
     nextAnchor.addEventListener("click", function() {
       var restaurantController = new RestaurantController();
-       var skipCount = parseInt(document.getElementById("pagingSkip").value) + 10;
-      restaurantController.searchRestaurants(searchParam, skipCount );
-      document.getElementById("pagingSkip").value = skipCount ;
+      var skipCount =
+        parseInt(document.getElementById("pagingSkip").value) +
+        Constants.PAGING_COUNT;
+      restaurantController.searchRestaurants(searchParam, skipCount);
+      document.getElementById("pagingSkip").value = skipCount;
     });
 
-    // Prev Element 
+    // Prev Element
     prevAnchor.addEventListener("click", function() {
       var restaurantController = new RestaurantController();
-      var skipCount = parseInt(document.getElementById("pagingSkip").value) -10;
-      if(skipCount < 0) skipCount = 0;
-      document.getElementById("pagingSkip").value = skipCount ;
-      restaurantController.searchRestaurants(
-        searchParam,
-        skipCount
-      );
+      var skipCount =
+        parseInt(document.getElementById("pagingSkip").value) -
+        Constants.PAGING_COUNT;
+      if (skipCount < 0) skipCount = 0;
+      document.getElementById("pagingSkip").value = skipCount;
+      restaurantController.searchRestaurants(searchParam, skipCount);
     });
-
-    searchResultsPlaceholder.appendChild(ulElement);
-    searchResultsPlaceholder.appendChild(prevAnchor);
-    searchResultsPlaceholder.appendChild(nextAnchor);
+    resultNavigationContainer.innerHTML = "";
+    resultNavigationContainer.appendChild(paraNode);
+    resultNavigationContainer.appendChild(prevAnchor);
+    resultNavigationContainer.appendChild(nextAnchor);
   }
 
   displayRestaurantsInModal(restData) {
@@ -157,8 +160,9 @@ export class RestaurantController {
         `${restaurantItem.restaurant.id}#${restaurantItem.restaurant.name}`
       );
 
-      var textNode = document.createTextNode(`  ${restaurantItem.restaurant
-        .name} (
+      var textNode = document.createTextNode(`  ${
+        restaurantItem.restaurant.name
+      } (
               ${restaurantItem.restaurant.location.locality} )`);
 
       labelElement.appendChild(inputElement);
@@ -171,12 +175,23 @@ export class RestaurantController {
 
   /**
    * Displays Restaurant Information
-   * @param {*} restData 
+   * @param {*} restData
    */
   displayRestaurantDetail(restData) {
     console.log(restData);
     let searchResultsPlaceholder = document.getElementById("ResultContainer");
     searchResultsPlaceholder.innerHTML = "";
+
+    var getDetailedCard = DomManager.getADetailedCard(
+      restData.name,
+      restData.thumb,
+      this.getRequiredRestaurantDetails(restData)
+    );
+
+    searchResultsPlaceholder.appendChild(getDetailedCard);
+  }
+
+  getRequiredRestaurantDetails(restData) {
     var restaurant = {
       "Average cost for two": restData.average_cost_for_two,
       "Phone Numbers": restData.phone_numbers
@@ -185,12 +200,6 @@ export class RestaurantController {
     restaurant.Address = restData.location.address;
     restaurant.Rating = restData.user_rating.aggregate_rating;
 
-    var getDetailedCard = DomManager.getADetailedCard(
-      restData.name,
-      restData.thumb,
-      restaurant
-    );
-
-    searchResultsPlaceholder.appendChild(getDetailedCard);
+    return restaurant;
   }
 }

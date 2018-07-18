@@ -72,12 +72,19 @@ function addCollection() {
 
 function updateCollection() {
   let collectionName = document.getElementById("collection-name").value;
+  ;
+  var restaturantIds = $(".restaurantCheckbox:checked")
+    .map(function() {
+      return $(this).val();
+    })
+    .get();
   let collectionId = document
     .getElementById("collection-name")
     .getAttribute("data-info");
   let payload = {
     id: collectionId,
-    title: collectionName
+    title: collectionName,
+    restaurants: DomManager.getArrayOfObjects(restaturantIds)
   };
   collectionController.updateCollection(payload);
 }

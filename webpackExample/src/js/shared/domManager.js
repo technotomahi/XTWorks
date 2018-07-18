@@ -1,4 +1,11 @@
+import { Constants } from "../shared/constants";
+//import { RestaurantController } from "../../controllers/restaurantController.j";
+
 export class DomManager {
+  constructor() {
+    this.restaurantController = new RestaurantController();
+  }
+
   static getAParaNode(text, className) {
     var paraElement = document.createElement("p");
     paraElement.className = className;
@@ -12,22 +19,48 @@ export class DomManager {
     var cardBody = document.createElement("div");
     var cardTitle = document.createElement("h5");
     var editIcon = document.createElement("i");
-    // <i class="far fa-edit" style=" float: right;"></i>
-    var cardItemsWrapper = document.createElement("div");
-
-    cardItemsWrapper.className = "connectedSortable";
     editIcon.className = "far fa-edit";
     editIcon.style = "float: right;";
 
+    var cardItemsWrapper = document.createElement("div");
+
+    cardItemsWrapper.className = "connectedSortable";
+
     editIcon.addEventListener("click", function() {
       $("#collectionModal").modal("show");
-      $(".search-fields").hide();
+      $(".search-fields").show();
       document.getElementById("collection-name").value = title;
       document
         .getElementById("collection-name")
         .setAttribute("data-info", `${collectionId}`);
       $("#update-collection").show();
       $("#add-collection").hide();
+      $("#restaurant-name-search-fields").hide();
+
+      let searchResultsPlaceholder = document.getElementById(
+        "restaurants-container-modal"
+      );
+      searchResultsPlaceholder.innerHTML = `<label for="message-text" style="font-weight:bold;" class="col-form-label">Restaurants Selected: (Uncheck to remove)</label>`;
+      restaurants.forEach(restaurantItem => {
+        var divElement = document.createElement("div");
+        var labelElement = document.createElement("label");
+        var inputElement = document.createElement("input");
+        inputElement.setAttribute("type", "checkbox");
+        inputElement.setAttribute("checked", "checked");
+        inputElement.className = "restaurantCheckbox";
+        inputElement.setAttribute(
+          "value",
+          `${restaurantItem.id}#${restaurantItem.name}`
+        );
+
+        var textNode = document.createTextNode(`  ${restaurantItem.name}`);
+
+        labelElement.appendChild(inputElement);
+        labelElement.appendChild(textNode);
+        divElement.appendChild(labelElement);
+        var self = this;
+        searchResultsPlaceholder.appendChild(divElement);
+      });
     });
 
     cardTitle.appendChild(editIcon);
@@ -39,6 +72,7 @@ export class DomManager {
 
     cardBody.appendChild(cardTitle);
     cardItemsWrapper.setAttribute("data-info", `${collectionId}`);
+    cardItemsWrapper.setAttribute("id", `restaurant-items-col-${collectionId}`);
     restaurants.forEach(restaurant => {
       var cardText = document.createElement("p");
       cardText.setAttribute("data-info", `${restaurant.id}`);
@@ -59,7 +93,9 @@ export class DomManager {
     document.getElementById("restaurants-container-modal").innerHTML = "";
     $("#update-collection").hide();
     $("#add-collection").show();
-    $("#collectionModal").modal("toggle");
+    $("#collectionModal").modal("hide");
+    $("#update-collection").hide();
+    $("#restaurant-name-search-fields").show();
   }
 
   static getArrayOfObjects(datas) {
@@ -75,6 +111,7 @@ export class DomManager {
     var img = document.createElement("img");
     img.className = "card-img-top";
     img.setAttribute("alt", "Card image cap");
+    image = image || Constants.ZOMATO_DEFAULT_IMAGE;
     img.setAttribute("src", image);
 
     var cardBody = document.createElement("div");
