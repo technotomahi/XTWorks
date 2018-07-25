@@ -49,7 +49,6 @@ export class DataService {
           });
         })
         .catch((err) => {
-          debugger;
           reject(err);
         });
     });

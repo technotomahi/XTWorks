@@ -1,9 +1,7 @@
 import { Constants } from '../shared/constants';
 
-export class DomManager {
-  constructor() {
-  }
-
+const document = window.document;
+class DomManager {
   static getAParaNode(text, className) {
     const paraElement = document.createElement('p');
     paraElement.className = className;
@@ -24,7 +22,7 @@ export class DomManager {
 
     cardItemsWrapper.className = 'connectedSortable';
 
-    editIcon.addEventListener('click', function () {
+    editIcon.addEventListener('click', () => {
       $('#collectionModal').modal('show');
       $('.search-fields').show();
       document.getElementById('collection-name').value = title;
@@ -56,7 +54,6 @@ export class DomManager {
         labelElement.appendChild(inputElement);
         labelElement.appendChild(textNode);
         divElement.appendChild(labelElement);
-        const self = this;
         searchResultsPlaceholder.appendChild(divElement);
       });
     });
@@ -139,3 +136,5 @@ export class DomManager {
     return card;
   }
 }
+
+export default DomManager;

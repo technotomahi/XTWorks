@@ -1,7 +1,7 @@
 import { Constants } from '../shared/constants';
 import { DataService } from './dataService';
 
-export class RestaurantService {
+class RestaurantService {
   constructor() {
     this.dataService = new DataService(Constants.ZOMATO_AUTH_KEY);
   }
@@ -22,3 +22,5 @@ export class RestaurantService {
     return this.dataService.getJSON(url);
   }
 }
+
+export default RestaurantService;

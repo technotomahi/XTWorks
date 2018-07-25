@@ -1,14 +1,13 @@
-.green
-{
-    color: green;
+.green {
+  color: green;
 }
- 
+
 .section-content {
   padding: 5rem 0;
 }
 
 #main-nav {
-  background-color: #e7f4f9;
+  /* background-color: #e7f4f9; */
   margin-bottom: 15px;
 }
 
@@ -23,30 +22,25 @@
 .card {
   margin: 10px;
   min-width: 200px;
-  min-height: 150px; 
+  min-height: 150px;
   background-color: #fbf8f8;
 }
 
-.floating-card-deck
-{
+.floating-card-deck {
   align-content: flex-start;
 }
 
-a.nav-link
-{
-    font-weight: 700;
-    color: black;
+a.nav-link {
+  color: white !important;
 }
 
-
-
 .previous {
-    background-color: #f1f1f1;
-    color: black;
+  background-color: #f1f1f1;
+  color: black;
 }
 
 .next {
-    background-color: #4CAF50;
-    color: white;
-    margin-left: 1rem;
+  background-color: #4caf50;
+  color: white;
+  margin-left: 1rem;
 }

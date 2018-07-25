@@ -33,12 +33,9 @@ class Constants {
 }
 
 const ReduxConstants = {
-  ADD_DAY: 'ADD_DAY',
-  ADD_RESTAURANT: 'ADD_RESTAURANT',
+  ADD_RESTAURANTS: 'ADD_RESTAURANTS',
   DETAIL_RESTAURANT: 'DETAIL_RESTAURANT',
-  REMOVE_DAY: 'REMOVE_DAY',
-  SET_GOAL: 'SET_GOAL',
-
+  CURRENT_VIEW: 'CURRENT_VIEW',
 };
 
 export { ReduxConstants, Constants };

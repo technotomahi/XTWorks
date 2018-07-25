@@ -1,5 +1,5 @@
 import { Constants } from '../shared/constants';
-import { DomManager } from '../views/domManager';
+import DomManager from '../views/domManager';
 import { CollectionService } from '../services/collectionService';
 
 export class CollectionController {
@@ -69,13 +69,12 @@ export class CollectionController {
    */
   displayCollections(data) {
     console.log(data);
-    const searchForm = document.getElementById('searchForm');
-
-    const resultscontainer = document.getElementById('ResultContainer');
+    let paraNode;
+    const resultscontainer = document.querySelector('#ResultContainer');
     resultscontainer.innerHTML = '';
     const totalitemsFound = data.length;
     if (totalitemsFound == 0) {
-      var paraNode = getAParaNode(
+      paraNode = getAParaNode(
         'Oops, Your search returned no results !!',
         'text-danger',
       );
@@ -83,12 +82,11 @@ export class CollectionController {
       resultscontainer.appendChild(paraNode);
       return;
     }
-    var paraNode = DomManager.getAParaNode(
+    paraNode = DomManager.getAParaNode(
       `${totalitemsFound} collections found. Showing ${totalitemsFound} only.`,
       'text-success',
     );
     resultscontainer.appendChild(paraNode);
-
 
     const collectionContainer = document.getElementById('collectionContainer');
     document.getElementById('collectionContainer').innerHTML = '';
@@ -121,7 +119,9 @@ export class CollectionController {
               resultRestaurants.push(p.getAttribute('data-info'));
             });
 
-            const index = resultRestaurants.findIndex(item => item == ui.item[0].getAttribute('data-info'));
+            const index = resultRestaurants.findIndex(
+              item => item === ui.item[0].getAttribute('data-info'),
+            );
             window.targetPositionId = index;
           },
           stop(event, ui) {

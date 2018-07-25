@@ -1,26 +1,24 @@
-import { Constants, ReduxConstants } from '../shared/constants';
-import { DomManager } from '../views/domManager';
-import { RestaurantService } from '../services/restaurantService';
-import { StoreManager } from '../store/store';
+import { ReduxConstants } from '../shared/constants';
+import DomManager from '../views/domManager';
+import RestaurantService from '../services/restaurantService';
+import StoreManager from '../store/store';
 
+const document = window.document;
 export class RestaurantController {
   constructor() {
     this.restaurantService = new RestaurantService();
   }
 
   getRestaurantDetail(id) {
-    this.restaurantService.getRestaurantDetail(id)
+    this.restaurantService
+      .getRestaurantDetail(id)
       .then((data) => {
         console.log(data);
-        const dataState = {
+        StoreManager.dispatch({
           type: ReduxConstants.DETAIL_RESTAURANT,
           payload: data,
-        };
-        StoreManager.dispatch(dataState);
-        const resultNavigationContainer = document.getElementById(
-          'ResultNavigationContainer',
-        );
-        resultNavigationContainer.innerHTML = '';
+        });
+        document.getElementById('ResultNavigationContainer').innerHTML = '';
       })
       .catch((err) => {
         console.log(err);
@@ -32,14 +30,11 @@ export class RestaurantController {
       .searchRestaurants(searchParam, skipCount)
       .then((data) => {
         data.searchParam = searchParam;
-        const dataState = {
-          type: ReduxConstants.ADD_RESTAURANT,
+
+        StoreManager.dispatch({
+          type: ReduxConstants.ADD_RESTAURANTS,
           payload: data,
-        };
-        StoreManager.dispatch(dataState);
-        dataState.type = ReduxConstants.DETAIL_RESTAURANT;
-        dataState.payload = {};
-        StoreManager.dispatch(dataState);
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -59,13 +54,14 @@ export class RestaurantController {
 
   displayRestaurantsInModal(restData) {
     console.log(restData);
+    var paraNode;
     const searchResultsPlaceholder = document.getElementById(
       'restaurants-container-modal',
     );
     searchResultsPlaceholder.innerHTML = '';
     const totalitemsFound = restData.results_found;
     if (totalitemsFound == 0) {
-      var paraNode = DomManager.getAParaNode(
+      paraNode = DomManager.getAParaNode(
         'Oops, Your search returned no results !!',
         'text-danger',
       );
@@ -78,7 +74,6 @@ export class RestaurantController {
       'text-success',
     );
     searchResultsPlaceholder.appendChild(paraNode);
-
 
     restData.restaurants.forEach((restaurantItem) => {
       const divElement = document.createElement('div');

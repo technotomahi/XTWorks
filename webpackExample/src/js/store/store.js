@@ -1,33 +1,43 @@
 import { createStore, combineReducers } from 'redux';
-import { Constants, ReduxConstants } from '../shared/constants';
-import { ViewHandler } from '../views/viewHandler';
-import {
-  restaurant,
-  allRestaurants,
-} from './reducers';
+import { ReduxConstants } from '../shared/constants';
+import ViewHandler from '../views/viewHandler';
+import { restaurant, allRestaurants, currentView } from './reducers';
 
 import initialState from './initialState.json';
 
 const appReducers = combineReducers({
   allRestaurants,
   restaurant,
+  currentView,
 });
 
 const state = initialState;
 const store = createStore(appReducers, state);
 
+console.log(`
+=========== Initial state 
+${JSON.stringify(state)}
+`);
+
 store.subscribe(() => {
-  console.log('Subscription data Received: ');
-  const state = store.getState();
-  if (state.restaurant.name) {
-    ViewHandler.displayRestaurantDetail(state.restaurant);
-  } else {
-    ViewHandler.displayRestaurants(state.allRestaurants);
+  const curState = store.getState();
+  console.log(`
+      =========== Current  state 
+      `);
+  console.log(curState);
+
+  if (curState.currentView === ReduxConstants.DETAIL_RESTAURANT) {
+    ViewHandler.displayRestaurantDetail(curState.restaurant);
+  } else if (curState.currentView === ReduxConstants.ADD_RESTAURANTS) {
+    ViewHandler.displayRestaurants(curState.allRestaurants);
   }
 });
 
-export class StoreManager {
+class StoreManager {
   static dispatch(action) {
     store.dispatch(action);
+    store.dispatch({ type: ReduxConstants.CURRENT_VIEW, payload: action.type });
   }
 }
+
+export default StoreManager;

@@ -1,33 +1,13 @@
 import { Constants } from '../shared/constants';
-import { DomManager } from './domManager';
+import DomManager from './domManager';
 import { RestaurantController } from '../controllers/restaurantController';
+
+const document = window.document;
 
 function createHTMLElement(html) {
   const template = document.createElement('template');
   template.innerHTML = html;
   return template.content.firstElementChild;
-}
-
-function createRestaurantCard(food) {
-  const foodCard = createHTMLElement(`
-  <div class="card" style="width: 23rem">
-    <img class="card-img-top" alt="Card image cap" src="https://b.zmtcdn.com/data/pictures/9/53449/1926b6522d6ae29425546ec43dc3cd17.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A">
-    <div class="card-body">
-      <h5 class="card-title">Sri Udupi Park</h5>
-      <div class="connectedSortable">
-        <p class="card-text">Average cost for two : 450</p>
-        <p class="card-text">Phone Numbers : undefined</p>
-        <p class="card-text">Name : Sri Udupi Park</p><p class="card-text">Address : 25/1, NR Chambers, Old Airport Road, Bangalore</p>
-        <p class="card-text">Rating : 3.2</p>
-        </div>
-    </div>
-  </div>
-  `);
-
-  const addButton = foodCard.querySelector('button');
-  addButton.addEventListener('click', function(){});
-
-  return foodCard;
 }
 
 const onClickRestaurantDetail = (id) => {
@@ -52,7 +32,7 @@ const onClickPrevButtonhandler = (searchParam) => {
   restaurantController.searchRestaurants(searchParam, skipCount);
 };
 
-export class ViewHandler {
+class ViewHandler {
   constructor() {
     this.restaurantController = new RestaurantController();
   }
@@ -96,15 +76,15 @@ export class ViewHandler {
       searchResultsPlaceholder.appendChild(paraNode);
       return;
     }
+
     paraNode = DomManager.getAParaNode(
       `Showing ${restData.results_start} - ${restData.results_start
-          + Constants.PAGING_COUNT} of ${totalitemsFound} restaurants found.`,
+        + Constants.PAGING_COUNT} of ${totalitemsFound} restaurants found.`,
       'text-success',
     );
-
-
+    let restCard;
     restData.restaurants.forEach((restaurantItem) => {
-      const restCard = DomManager.getADetailedCard(
+      restCard = DomManager.getADetailedCard(
         restaurantItem.restaurant.name,
         restaurantItem.restaurant.thumb,
         this.getRequiredRestaurantDetails(restaurantItem.restaurant),
@@ -151,3 +131,5 @@ export class ViewHandler {
     return restaurant;
   }
 }
+
+export default ViewHandler;

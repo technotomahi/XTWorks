@@ -1,10 +1,9 @@
-import { DomManager } from './views/domManager';
+import DomManager from './views/domManager';
 import { RestaurantController } from './controllers/restaurantController';
 import { CollectionController } from './controllers/collectionController';
 import { StoreManager } from './store/store';
 
 require('../scss/styles.scss');
-
 
 const restaurantController = new RestaurantController();
 let collectionController = new CollectionController();

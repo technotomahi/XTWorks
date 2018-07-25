@@ -13,7 +13,6 @@ export class CollectionService {
   }
 
   addCollection(payload) {
-    debugger;
     this.dataService.fetchOptions.method = 'POST';
     const collectionAddUrl = Constants.ADD_COLLECTIONS_URL;
     return this.dataService.postJSON(collectionAddUrl, payload);
