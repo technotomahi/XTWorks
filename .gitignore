@@ -1,3 +1,4 @@
 /assignment/NewBootstrap4/node_modules/*
 /webpackExample/node_modules/*
 webpack/node_modules/
+ReduxExample/node_modules/

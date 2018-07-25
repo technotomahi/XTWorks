@@ -1,6 +1,7 @@
-import { Constants } from "../shared/constants";
-import { DomManager } from "../shared/domManager";
-import { CollectionService } from "../services/collectionService";
+import { Constants } from '../shared/constants';
+import { DomManager } from '../views/domManager';
+import { CollectionService } from '../services/collectionService';
+
 export class CollectionController {
   constructor() {
     this.collectionService = new CollectionService();
@@ -12,11 +13,11 @@ export class CollectionController {
   searchCollections() {
     this.collectionService
       .getCollections()
-      .then(data => {
+      .then((data) => {
         console.log(data);
         this.displayCollections(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -24,41 +25,40 @@ export class CollectionController {
   addCollection(payload) {
     this.collectionService
       .addCollection(payload)
-      .then(data => {
+      .then((data) => {
         console.log(data);
         this.AddToCollection(data);
         DomManager.cleanCollectionModal();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
 
   updateCollection(payload) {
-    ;
     this.collectionService
       .updateCollection(payload)
-      .then(data => {
+      .then((data) => {
         console.log(data);
         DomManager.cleanCollectionModal();
         document.getElementById(
-          "card-title-" + data.id
+          `card-title-${data.id}`,
         ).innerHTML = `<i class="far fa-edit" style="float: right;"></i>${
           data.title
         }`;
-        var cardItemsWrapper = document.getElementById(
-          `restaurant-items-col-${data.id}`
+        const cardItemsWrapper = document.getElementById(
+          `restaurant-items-col-${data.id}`,
         );
-        cardItemsWrapper.innerHTML = "";
-        data.restaurants.forEach(restaurant => {
-          var cardText = document.createElement("p");
-          cardText.setAttribute("data-info", `${restaurant.id}`);
+        cardItemsWrapper.innerHTML = '';
+        data.restaurants.forEach((restaurant) => {
+          const cardText = document.createElement('p');
+          cardText.setAttribute('data-info', `${restaurant.id}`);
           cardText.appendChild(document.createTextNode(restaurant.name));
-          cardText.className = "card-text";
+          cardText.className = 'card-text';
           cardItemsWrapper.appendChild(cardText);
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -69,96 +69,94 @@ export class CollectionController {
    */
   displayCollections(data) {
     console.log(data);
-    let searchForm = document.getElementById("searchForm");
+    const searchForm = document.getElementById('searchForm');
 
-    let resultscontainer = document.getElementById("ResultContainer");
-    resultscontainer.innerHTML = "";
-    var totalitemsFound = data.length;
+    const resultscontainer = document.getElementById('ResultContainer');
+    resultscontainer.innerHTML = '';
+    const totalitemsFound = data.length;
     if (totalitemsFound == 0) {
       var paraNode = getAParaNode(
-        "Oops, Your search returned no results !!",
-        "text-danger"
+        'Oops, Your search returned no results !!',
+        'text-danger',
       );
 
       resultscontainer.appendChild(paraNode);
       return;
-    } else {
-      var paraNode = DomManager.getAParaNode(
-        `${totalitemsFound} collections found. Showing ${totalitemsFound} only.`,
-        "text-success"
-      );
-      resultscontainer.appendChild(paraNode);
     }
+    var paraNode = DomManager.getAParaNode(
+      `${totalitemsFound} collections found. Showing ${totalitemsFound} only.`,
+      'text-success',
+    );
+    resultscontainer.appendChild(paraNode);
 
-    let collectionContainer = document.getElementById("collectionContainer");
-    document.getElementById("collectionContainer").innerHTML = "";
-    data.forEach(dataItem => {
-      var card = DomManager.getACard(
+
+    const collectionContainer = document.getElementById('collectionContainer');
+    document.getElementById('collectionContainer').innerHTML = '';
+    data.forEach((dataItem) => {
+      const card = DomManager.getACard(
         dataItem.id,
         dataItem.title,
-        dataItem.restaurants
+        dataItem.restaurants,
       );
       collectionContainer.appendChild(card);
     });
-    var collectionController = new CollectionController();
+    const collectionController = new CollectionController();
     collectionController.addDragability();
   }
 
   addDragability() {
-    $(function() {
-      $(".connectedSortable")
+    $(() => {
+      $('.connectedSortable')
         .sortable({
-          connectWith: ".connectedSortable",
-          start: function(event, ui) {
+          connectWith: '.connectedSortable',
+          start(event, ui) {
             this.sourceCollectionId = ui.item[0].parentElement.getAttribute(
-              "data-info"
+              'data-info',
             );
           },
-          receive: function(event, ui) {
-            var group = event.target;
-            var resultRestaurants = [];
-            event.target.childNodes.forEach(p => {
-              resultRestaurants.push(p.getAttribute("data-info"));
+          receive(event, ui) {
+            const group = event.target;
+            const resultRestaurants = [];
+            event.target.childNodes.forEach((p) => {
+              resultRestaurants.push(p.getAttribute('data-info'));
             });
-            ;
-            var index = resultRestaurants.findIndex(function(item) {
-              return item == ui.item[0].getAttribute("data-info");
-            });
+
+            const index = resultRestaurants.findIndex(item => item == ui.item[0].getAttribute('data-info'));
             window.targetPositionId = index;
           },
-          stop: function(event, ui) {
+          stop(event, ui) {
             this.targetCollectionId = ui.item[0].parentElement.getAttribute(
-              "data-info"
+              'data-info',
             );
-            console.log("Source Collection id" + this.sourceCollectionId);
+            console.log(`Source Collection id${this.sourceCollectionId}`);
             this.collectionService = new CollectionService();
-            ;
-            var self = this;
+
+            const self = this;
             this.collectionService.UpdateCollections(
               this.sourceCollectionId,
               this.targetCollectionId,
               {
-                id: ui.item[0].getAttribute("data-info"),
-                name: ui.item[0].innerHTML
+                id: ui.item[0].getAttribute('data-info'),
+                name: ui.item[0].innerHTML,
               },
-              window.targetPositionId
+              window.targetPositionId,
             );
-          }
+          },
         })
         .disableSelection();
     });
   }
 
   AddToCollection(dataItem) {
-    let collectionContainer = document.getElementById("collectionContainer");
-    var card = DomManager.getACard(
+    const collectionContainer = document.getElementById('collectionContainer');
+    const card = DomManager.getACard(
       dataItem.id,
       dataItem.title,
-      dataItem.restaurants
+      dataItem.restaurants,
     );
     collectionContainer.appendChild(card);
-    $("#collectionModal").modal("toggle");
-    var collectionController = new CollectionController();
+    $('#collectionModal').modal('toggle');
+    const collectionController = new CollectionController();
     collectionController.addDragability();
   }
 }

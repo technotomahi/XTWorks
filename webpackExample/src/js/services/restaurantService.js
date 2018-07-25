@@ -1,5 +1,6 @@
-import { Constants } from "../shared/constants";
-import { DataService } from "./dataService";
+import { Constants } from '../shared/constants';
+import { DataService } from './dataService';
+
 export class RestaurantService {
   constructor() {
     this.dataService = new DataService(Constants.ZOMATO_AUTH_KEY);
@@ -7,28 +8,17 @@ export class RestaurantService {
 
   searchRestaurants(query, offset) {
     const cityId = 4;
-    this.dataService.fetchOptions.method = "GET";
-    let queryParams = `?entity_id=${cityId}&entity_type=city&q=${encodeURI(
-      query
+    this.dataService.fetchOptions.method = 'GET';
+    const queryParams = `?entity_id=${cityId}&entity_type=city&q=${encodeURI(
+      query,
     )}&count=${Constants.PAGING_COUNT}&start=${offset}`;
     let searchUrl = Constants.RESTAURANTS_SEARCH_URL;
-    searchUrl = searchUrl + queryParams;
+    searchUrl += queryParams;
     return this.dataService.getJSON(searchUrl);
   }
 
-  postJSON(url) {
-    this.fetchOptions.method = "POST";
-    var dataPromise = fetch(url, this.fetchOptions);
-    return new Promise((resolve, reject) => {
-      dataPromise
-        .then(res => {
-          res.json().then(data => {
-            resolve(data);
-          });
-        })
-        .catch(err => {
-          reject(err);
-        });
-    });
+  getRestaurantDetail(id) {
+    const url = `${Constants.ZOMATO_API_BASE}restaurant?res_id=${id}`;
+    return this.dataService.getJSON(url);
   }
 }

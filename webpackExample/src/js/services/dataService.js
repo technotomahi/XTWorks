@@ -1,71 +1,72 @@
 export class DataService {
   constructor(authKey) {
     this.fetchOptions = {
-      headers: { "Content-Type": "application/json", "user-key": authKey },
-      mode: "cors",
-      cache: "default"
+      headers: { 'Content-Type': 'application/json', 'user-key': authKey },
+      mode: 'cors',
+      cache: 'default',
     };
   }
 
   logJSON(url) {
-    this.fetchOptions.method = "POST";
+    this.fetchOptions.method = 'POST';
     fetch(url, this.fetchOptions)
-      .then(res => {
-        res.json().then(data => {
+      .then((res) => {
+        res.json().then((data) => {
           console.log(data);
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
 
   getJSON(url) {
-    this.fetchOptions.method = "GET";
+    this.fetchOptions.method = 'GET';
     delete this.fetchOptions.body;
-    var dataPromise = fetch(url, this.fetchOptions);
+    const dataPromise = fetch(url, this.fetchOptions);
     return new Promise((resolve, reject) => {
       dataPromise
-        .then(res => {
-          res.json().then(data => {
+        .then((res) => {
+          res.json().then((data) => {
             resolve(data);
           });
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });
   }
 
   postJSON(url, payload) {
-    this.fetchOptions.method = "POST";
+    this.fetchOptions.method = 'POST';
     this.fetchOptions.body = JSON.stringify(payload);
-    var dataPromise = fetch(url, this.fetchOptions);
+    const dataPromise = fetch(url, this.fetchOptions);
     return new Promise((resolve, reject) => {
       dataPromise
-        .then(res => {
-          res.json().then(data => {
+        .then((res) => {
+          res.json().then((data) => {
             resolve(data);
           });
         })
-        .catch(err => {
+        .catch((err) => {
+          debugger;
           reject(err);
         });
     });
   }
 
   putJSON(url, payload) {
-    this.fetchOptions.method = "PUT";
+    this.fetchOptions.method = 'PUT';
     this.fetchOptions.body = JSON.stringify(payload);
-    var dataPromise = fetch(url, this.fetchOptions);
+    const dataPromise = fetch(url, this.fetchOptions);
     return new Promise((resolve, reject) => {
       dataPromise
-        .then(res => {
-          res.json().then(data => {
+        .then((res) => {
+          res.json().then((data) => {
             resolve(data);
           });
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });

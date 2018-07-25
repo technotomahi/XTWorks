@@ -1,32 +1,34 @@
-import { Constants } from "../shared/constants";
-import { DataService } from "./dataService";
+import { Constants } from '../shared/constants';
+import { DataService } from './dataService';
+
 export class CollectionService {
   constructor() {
     this.dataService = new DataService(Constants.ZOMATO_AUTH_KEY);
   }
 
   getCollections() {
-    this.dataService.fetchOptions.method = "GET";
-    let collectionUrl = Constants.COLLECTIONS_API;
+    this.dataService.fetchOptions.method = 'GET';
+    const collectionUrl = Constants.COLLECTIONS_API;
     return this.dataService.getJSON(collectionUrl);
   }
 
   addCollection(payload) {
-    this.dataService.fetchOptions.method = "POST";
-    let collectionAddUrl = Constants.ADD_COLLECTIONS_URL;
+    debugger;
+    this.dataService.fetchOptions.method = 'POST';
+    const collectionAddUrl = Constants.ADD_COLLECTIONS_URL;
     return this.dataService.postJSON(collectionAddUrl, payload);
   }
 
   updateCollection(payload) {
-    let collectionUrl = Constants.COLLECTIONS_API;
+    const collectionUrl = Constants.COLLECTIONS_API;
     return this.dataService
-      .getJSON(collectionUrl + "/" + payload.id)
-      .then(data => {
+      .getJSON(`${collectionUrl}/${payload.id}`)
+      .then((data) => {
         data.title = payload.title;
         data.restaurants = payload.restaurants;
         return this.UpdateCollection(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -35,40 +37,37 @@ export class CollectionService {
     sourceCollectionId,
     targetCollectionId,
     restaurant,
-    targetPositionId
+    targetPositionId,
   ) {
-    let collectionUrl = Constants.COLLECTIONS_API;
+    const collectionUrl = Constants.COLLECTIONS_API;
     // Remove from Source Collection
     this.dataService
-      .getJSON(collectionUrl + "/" + sourceCollectionId)
-      .then(data => {
-        //console.log(data);
-        var index = data.restaurants.findIndex(function(item) {
-          return item.id == restaurant.id;
-        });
-        ;
+      .getJSON(`${collectionUrl}/${sourceCollectionId}`)
+      .then((data) => {
+        // console.log(data);
+        const index = data.restaurants.findIndex(item => item.id == restaurant.id);
+
         data.restaurants.splice(index, 1);
         this.UpdateCollection(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
 
     // Add to target Collection
     this.dataService
-      .getJSON(collectionUrl + "/" + targetCollectionId)
-      .then(data => {
-        ;
+      .getJSON(`${collectionUrl}/${targetCollectionId}`)
+      .then((data) => {
         data.restaurants.splice(targetPositionId, 0, restaurant);
         this.UpdateCollection(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
 
   UpdateCollection(data) {
-    let collectionUrl = Constants.COLLECTIONS_API;
-    return this.dataService.putJSON(collectionUrl + "/" + data.id, data);
+    const collectionUrl = Constants.COLLECTIONS_API;
+    return this.dataService.putJSON(`${collectionUrl}/${data.id}`, data);
   }
 }
