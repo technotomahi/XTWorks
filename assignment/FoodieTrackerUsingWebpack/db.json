@@ -1,0 +1,130 @@
+{
+  "collections": [
+    {
+      "title": "Non Veg Delights",
+      "author": "Mahi",
+      "restaurants": [
+        {
+          "id": "18339874",
+          "name": "Farzi Cafe"
+        },
+        {
+          "id": "50420",
+          "name": "Fava"
+        },
+        {
+          "id": "55907",
+          "name": "JW Kitchen - JW Marriott Bengaluru"
+        },
+        {
+          "id": "57730",
+          "name": "Caperberry"
+        },
+        {
+          "id": "51552",
+          "name": "Skyye"
+        },
+        {
+          "id": "18494064",
+          "name": "MISU"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "Vegiee Delights",
+      "author": "Mahi",
+      "restaurants": [
+        {
+          "id": "53449",
+          "name": "Sri Udupi Park"
+        },
+        {
+          "id": "18455581",
+          "name": "Udupi Ruchi"
+        },
+        {
+          "id": "61289",
+          "name": "Udupi Grand"
+        },
+        {
+          "id": "18565836",
+          "name": "Udupi Deluxe"
+        },
+        {
+          "id": "60210",
+          "name": "Udupi Park Restaurant"
+        },
+        {
+          "id": "18675054",
+          "name": "Udupi Utsav"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "title": "South Indian Delicasies",
+      "author": "Mahi",
+      "restaurants": [
+        {
+          "id": "50663",
+          "name": "Mavalli Tiffin Room (MTR)"
+        },
+        {
+          "id": "50407",
+          "name": "Ebony"
+        },
+        {
+          "id": "18339884",
+          "name": "South Ruchis Square"
+        },
+        {
+          "id": "18287433",
+          "name": "The Permit Room"
+        },
+        {
+          "id": "51822",
+          "name": "Koshy's"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Punjabi Tadka",
+      "author": "Mahi",
+      "restaurants": [
+        {
+          "id": "18581089",
+          "name": "Punjab Grill"
+        },
+        {
+          "id": "55907",
+          "name": "JW Kitchen - JW Marriott Bengaluru"
+        },
+        {
+          "id": "57730",
+          "name": "Caperberry"
+        },
+        {
+          "id": "51552",
+          "name": "Skyye"
+        },
+        {
+          "id": "18494064",
+          "name": "MISU"
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,5 @@
+{	 
+	"restaurant" : null,
+	"allRestaurants" : [],
+	"currentView" : "ADD_RESTAURANTS" 
+}
