@@ -1,0 +1,19 @@
+.card-section{
+    width: 100%;
+    color:#442e63;
+
+    h6{
+        padding-left: .5em;
+    }
+}
+
+.noListItem {
+    display: flex;
+    justify-content: center;
+}
+
+.topicCardContainer, .challengeCardContainer{
+    height: 10em;
+    width: 10em;
+    margin-left: calc(50% - 5em);
+}

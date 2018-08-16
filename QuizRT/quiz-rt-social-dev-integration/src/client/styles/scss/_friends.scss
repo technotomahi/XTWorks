@@ -1,0 +1,47 @@
+.profile_pic{
+	height: 40px;
+	border-radius: 20px;
+}
+
+.frnd_header_bg{
+	background-color: #462e62;
+}
+
+.frnd_header_menu{	
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background-color: #442e63;
+    color: white;
+}
+
+.mdc-tab .mdc-tab__text-label{
+	color: white;
+}
+
+.mdc-tab--active .mdc-tab__text-label{
+	color: blue;
+}
+.subHeeader{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+}
+.userListConatiner{
+	width : 90%;
+}
+@media (min-width: 490px) {
+  .frnd_header_menu{	
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    background-color: #442e63;
+    color: white;
+}
+}
+@media (min-width: 700px) {
+.userListConatiner{
+	width : 70%;
+}
+}

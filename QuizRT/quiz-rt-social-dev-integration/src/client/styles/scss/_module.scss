@@ -1,0 +1,423 @@
+.login-hero-img{
+  background-image: url('../../assets/login_bg1.png');
+  height: 100vh;
+  width: 100vw;
+  filter:blur(3px);
+}
+
+.chall-img{
+  background-image: url('../../assets/challenges001.png');
+}
+
+.dashboard_chall{
+  background-image: url('../../assets/challenges001.png');
+  height: 90%;
+}
+
+.login-form{
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  top: calc(50% - 70px);
+  left: calc(50% - 140px);
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  padding: 0 10px;
+  width: 280px;
+  height: 140px;
+  .lbl_login{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin: 1em;
+  }
+}
+#signin {
+  cursor: pointer;
+  margin: 0;
+  border-radius: 5px;
+  font-size: 0.8em;
+  position: relative;
+  left: 50%;
+  min-height: 4em;
+  transform: translate(-50%);
+  background-color: #49145b;
+  border: none;
+  color: var(--form-background);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  box-sizing: border-box;
+  border: 1px solid #fbffff;
+  /* top: calc(50% - 30px); */
+  color: #f0f0f1;
+  i{
+    font-size: 2em;
+    /* margin-top: 11px; */
+    position: relative;
+    top: -3px;
+  }
+  #signinLbl{
+    font-size: 1em;
+    position: relative;
+    top: 2px;
+    left: 3px;
+  }
+}
+#signin:hover{
+  color: #ffffff;
+  background-color: #47125b;
+  border: 1px solid #c9c7ca7d;
+}
+
+
+#quiz-loader {
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 38px);
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  .overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+  }
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        background: #1b004294;
+      }
+      .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 51px;
+        height: 51px;
+        margin: 6px;
+        border: 6px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+      }
+      .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+      .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+      .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+      @keyframes lds-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }      
+}
+
+#quiz-snackbar {
+  min-width: 250px;
+  margin-left: -125px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#quiz-snackbar.show {
+  display: block;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+aside#challenge-mdc-dialog, aside#topic-mdc-dialog{
+  .mdc-dialog__surface{
+    // border: 2px solid #ccc;
+    max-width: 30em;
+  }
+  .mdc-dialog__header{
+    background: #eaeaea;
+    padding-bottom: 1.2em;
+    color: #131212;
+    border-bottom: 1px solid #cacaca;
+  }
+  .mdc-dialog__body .mdc-button{
+    min-width: 18em;
+    width: 18em;
+    margin-left: calc(50% - 9em);
+  }
+  .mdc-dialog__footer{
+    background: #eaeaea;
+    border-top: 1px solid #cacaca;
+  }
+}
+
+#topic-mdc-dialog-description{
+  .mdc-button{
+
+  }
+}
+
+.challengeCardContainer, .topicCardContainer{
+  .mdc-card{
+    height: 10em;
+    width: 10em;
+  }
+}
+
+#challengeSection{
+  .mdl-color--primary{
+    background-color:white !important;
+  }
+  #shareChallengesTable{
+    .mdl-button--raised.mdl-button--colored{
+      background-color:#442e63 !important;
+
+    }
+  }
+}
+
+
+.createChallContent {
+  button.mdl-button--raised.mdl-button--colored{
+    background-color:#442e63 !important;
+
+  }
+}
+#shareChall-mdc-dialog{
+  .mdl-button--raised.mdl-button--colored{
+      background-color:#442e63 !important;
+
+    }
+}
+.friendsUsernames{
+    max-height: 18em;
+    overflow: auto;
+}
+
+
+#quiz-header{
+  .mdc-top-app-bar{
+    background-color: #442e63 !important;
+    height: 55px;
+  }
+  .quiz-menuIcon {
+    margin: 0 8px 0 0 !important;
+  }
+  .mdc-drawer{
+    z-index: 99 !important;
+  }
+  #appName{
+    cursor: pointer;
+  }
+  .userIcon{
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+  }
+  .mdc-drawer--temporary .mdc-drawer__header-content{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center !important;
+
+    .mdl-list__item-primary-content{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .mdl-list__item-avatar{
+    height: 80px !important;
+    width: 80px !important;
+    font-size: 68px !important;
+    padding: 6px !important;
+  }
+  #loggedInEmail{
+    justify-content: center;
+    display: flex;
+    font-size: 1em;
+    padding: 0.3em;
+  }
+}
+
+#quiz-maincontent{
+ min-height:calc(100% - 55px)
+}
+
+#quiz-footer{
+  .footer-container{
+    width: 100%;
+    background: #442e63;
+    position: relative;
+    bottom: 0;
+    min-height: 45px;
+    .copyRight-container{
+      padding: .4em;
+     .copyright{
+        font-size: .7em;
+        color: #fff;
+        font-weight: bold;
+
+      p {
+          font-size: .4em;
+          color: #fff;
+          margin: .5em 0 0 0 !important;
+          font-size: 1em;
+          line-height: 1em;
+      }
+     }
+    }
+  }
+}
+
+.challFormValidator{
+  color: red;
+}
+
+#challengeSection{
+  .mdl-color--grey-100{
+    width :100%;
+  }
+  .mdl-layout__content,.mdl-card{
+      max-width: 30em;
+
+  }
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 568px){
+  .mdl-layout__content,.mdl-card{
+    width : 100%;
+  }
+ 
+}
+@media only screen and (min-device-width: 568px){
+  .mdl-layout__content{
+   display:inline;
+   }
+}
+
+
+#challenge-Sidebar{
+.mdl-layout__container{
+  height: calc(100% - 105px);
+  }
+}
+
+#selectChallTopic{
+      -webkit-appearance: none
+}
+
+@media(min-width:425px){
+#challengeSection{
+    .mdl-grid {
+    padding: 8px;
+    width: 50%;
+    }
+  .mdl-color--grey-100{
+    width :100%;
+  }
+  .mdl-layout__content,.mdl-card{
+  width:100%;
+  }
+}
+}
+
+#mdl-table{
+  flex-grow: 1;
+
+}
+
+.app-fab--absolute {
+  //bottom: 1rem;
+  //right: 1rem;
+}
+
+#createChallenge{
+    background-color: #442e63;
+    top: -2.5 rem;
+}
+#challenegeLabel{
+  font-weight: bold;
+}
+#challengePanel{
+  color: #442e63 !important;
+  text-align: center;
+}
+#createChallIcon{
+  color: white;
+}
+
+
+   .app-fab--absolute {
+    //bottom: -5.5rem;
+    right: 1rem;
+    top: -2.5rem;
+  }
+@media(max-width:445px){
+  .app-fab--absolute {
+    right: -10rem;
+    top: -59rem;
+}
+}
+#createChallHeader,.createChallHeaderLabel{
+  color:black;
+}
+.createChallContent{
+  width: 100%;
+}
+
+#createChallHeaderLabelDiv{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600
+}
+
+@media(max-width: 650px){
+  .tableChallengeIdCol{
+    display: none;
+  }
+}
+

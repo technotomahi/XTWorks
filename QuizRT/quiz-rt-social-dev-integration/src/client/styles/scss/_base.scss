@@ -1,0 +1,40 @@
+
+
+*{
+    a:hover {
+        text-decoration: none !important;
+    }
+}
+body{
+    background: #efefef;
+}
+header{
+    .logoutIcon, .chatIcon{
+        color: #FFF;
+        margin-right: .5em;
+        padding-top: 0.2em;
+    }
+    .mdl-badge{
+        margin-right: .3em !important;
+    }
+}
+
+.mainContainer{
+    padding-top: 4.1em;
+}
+
+
+
+#challengeSection{
+    justify-content: center;
+}
+
+
+.mdl-layout {
+	align-items: center;
+  justify-content: center;
+}
+.mdl-layout__content {
+	padding: 24px;
+	flex: none;
+}

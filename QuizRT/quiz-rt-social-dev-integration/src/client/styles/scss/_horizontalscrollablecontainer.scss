@@ -1,0 +1,38 @@
+
+.hsListContainer {
+    height: 13.6em;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: auto;
+    color: #442e63;
+    text-align: center;
+    .mdc-card{
+        width: 155px;
+        height: 175px;
+        min-width: 155px;
+        min-height: 175px;
+        padding: .6em;
+        margin: 0.2em .5em;
+        // -moz-box-shadow: 0 0.3em 0.9em 0 #0b0119;
+        // -webkit-box-shadow: 0 0.3em 0.9em 0 #0b0119;
+        // box-shadow: 0 0.3em 0.9em 0 #0b0119;
+        // -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        // box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        .mdc-typography--subtitle2{
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+    .mdc-card:hover{
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+    .mdc-card__media{
+    background-size: contain;
+    }
+}
+
+

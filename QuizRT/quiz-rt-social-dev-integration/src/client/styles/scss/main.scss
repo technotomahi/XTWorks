@@ -1,0 +1,73 @@
+@import '../../../../node_modules/material-design-lite/src/material-design-lite';
+@import 'state';
+@import 'bootstrap/scss/bootstrap';
+@import '@material/select/mdc-select';
+@import '@material/top-app-bar/mdc-top-app-bar';
+@import '@material/drawer/mdc-drawer';
+@import '@material/list/mdc-list';
+@import '@material/elevation/mdc-elevation';
+@import '@material/form-field/mdc-form-field';
+@import '@material/card/mdc-card';
+@import '@material/dialog/mdc-dialog';
+@import '@material/grid-list/mdc-grid-list';
+@import '@material/layout-grid/mdc-layout-grid';
+@import "~@material/textfield/mdc-text-field";
+@import "~@material/list/mdc-list";
+@import "~@material/floating-label/mdc-floating-label";
+@import '@material/button/mdc-button';
+
+
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/fab/mdc-fab";
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(~/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(~material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+    url(~material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
+    url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+    }
+    
+    .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    
+    /* Support for all WebKit browsers. /
+    -webkit-font-smoothing: antialiased;
+    / Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+    }
+.material-icons.green { color: #008b00; }
+
+@import "./customize";
+@import "./base";
+@import "./horizontalscrollablecontainer";
+@import "./dashboard";
+@import "./topics";
+@import "./shareChallenges";
+@import "./module";
+@import "./chat";
+@import "./friends";
+

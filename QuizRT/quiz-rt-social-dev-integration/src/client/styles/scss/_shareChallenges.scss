@@ -1,0 +1,26 @@
+#friendsLi{
+    display: block;
+    span{
+        i{
+            background: #637382
+        }
+    }
+}
+
+#friendsLi{
+    display: flex;
+}
+
+#submitSharedChallenge{
+    // margin-right: 500px;
+    // margin-left: 20px;
+    background-color: #442e63 !important;
+}
+
+.shareChallengesFriendsList{
+    color:white;
+}
+
+#shareChallengesModelHeader{
+    background: #545077;
+}

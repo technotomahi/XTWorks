@@ -1,0 +1,13 @@
+QuizRT
+
+This is a Quiz game developed by three teams 
+
+the code for each team is given below
+
+https://github.com/QUIZ-RT
+
+https://github.com/QUIZ-RT/question-generator/tree/Integration
+https://github.com/QUIZ-RT/Quiz-Engine/tree/dev-quiz-engine
+https://github.com/QUIZ-RT/quiz-rt-social/tree/dev-integration
+ 
+

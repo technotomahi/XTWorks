@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./assets/app-icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type='text/css' href="./bundle.css">
+    <title>Quiz-RT Question Generator</title>
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <input type="hidden" id="pagingSkip" name="custId" value="0">
+    <aside class="mdc-drawer mdc-drawer--temporary mdc-typography" id="sideNav">
+        <nav class="mdc-drawer__drawer">
+            <nav class="mdc-drawer__content mdc-list-group">
+                <div id="icon-with-text-demo" class="mdc-list">
+                    <a class="navScreen mdc-list-item demo-drawer-list-item" tabindex="-1" data-screen="questionManager" href="#questionManager">
+                        Question Manager</a>
+                    <a class="navScreen mdc-list-item demo-drawer-list-item" tabindex="-1" data-screen="topicManager" href="#topicManager">
+                        Topic Manager</a>
+                    <a class="navScreen mdc-list-item demo-drawer-list-item" tabindex="-1" data-screen="questionGenerator" href="#questionGenerator">
+                        Question Generator</a>
+                    <a class="navScreen mdc-list-item demo-drawer-list-item" tabindex="-1" data-screen="accessRequests" href="#accessRequests">
+                        Access Requests</a>
+
+                </div>
+            </nav>
+        </nav>
+    </aside>
+    <div class="drawer-header-flex">
+        <header class="mdc-top-app-bar">
+            <div class="mdc-top-app-bar__row" id="headSection">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <h2 style="display:none">Menu</h2>
+                    <button class="menu material-icons mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" id="btnMenu">menu</button>
+                    <span class="mdc-top-app-bar__title">Quiz RT</span>
+                </section>
+            </div>
+        </header>
+    </div>
+    <div id="messages" class="messages"></div>
+    <div class="clearfix"></div>
+    <div class="tab-content" id="mainContainer"></div>
+    <div id="dialogContainer"></div>
+    <div id="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+.mdl-card {
+    width: 24.6vw;
+    margin: 0 auto;
+}
+
+.mdl-card__supporting-text {
+    font-size: 1.2em;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.display-row {
+    flex-direction: row;
+}
+
+.display-column {
+   flex-direction:column;
+}
+
+.display-flex{
+   display: flex;
+}
+
+.selectRange {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.rankingTable {
+    // min-width: 36vw; 
+    min-height: 42vh;  
+}
+
+.mdl-table{
+   max-height: 43vh;
+   overflow-y: scroll;
+}
+
+mdc-select.mdc-select--outline{
+    min-width:36vw;
+}
+
+.selectedRow {
+    background-color: #64b5f6;
+    font-weight: bold;
+}
+
+.selectedRow:hover {
+    background-color: #bbdefb !important;
+}
+
+.mdl-color--customTheme {
+    background-color:  #efefef;
+}

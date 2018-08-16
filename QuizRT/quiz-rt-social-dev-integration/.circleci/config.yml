@@ -1,0 +1,77 @@
+version: 2
+jobs:
+  build1:
+    working_directory: ~/quiz-rt-social
+    # The primary container is an instance of the first image listed. The job's commands run in this container.
+    docker:
+      - image: circleci/node:8
+    # The secondary container is an instance of the second listed image which is run in a common network where ports exposed on the primary container are available on localhost.
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run build
+          command: npm run build
+  test:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm test
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/quiz-rt-social
+    steps:
+      - checkout
+      - run:
+          name: Echo upgrade heroku
+          command: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+      - run:
+          name: Heroku container login
+          command: heroku container:login
+      - run:
+          name: Heroku help container
+          command: heroku help container
+      - run:
+          name: Heroku docker build
+          command: heroku container:push web --app quizrtsocial
+      - run:
+          name: Heroku container release
+          command: heroku container:release web -a quizrtsocial
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build1:
+          filters:
+            branches:
+              only: dev-integration
+      - test:
+          requires:
+            - build1
+          filters:
+            branches:
+              only: dev-integration
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: dev-integration
+
+        
