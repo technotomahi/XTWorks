@@ -1,0 +1,34 @@
+{
+    "hotels" : [
+        {
+            "name" : "The Dinner",
+            "cuisine":"chinese",
+            "city":"bangalore",
+            "rating":"5"
+        },
+        {
+            "name" : "The Keys",
+            "cuisine":"indian",
+            "city":"bangalore",
+            "rating":"4"
+        },
+        {
+            "name" : "The Zuri",
+            "cuisine":"continental",
+            "city":"bangalore",
+            "rating":"5"
+        },
+        {
+            "name" : "The Spirit",
+            "cuisine":"continental",
+            "city":"Delhi",
+            "rating":"3"
+        },
+        {
+            "name" : "Punjabi Dhaba",
+            "cuisine":"indian",
+            "city":"Delhi",
+            "rating":"5"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{{title}}
+<div>
+        <form action="hotelapp/hotelsbycity" method="GET">
+            <input type="text" name="city" placeholder="enter city">
+            <input type="submit" value="Search By City">
+        </form>
+    </div>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>CUISINE</th>
+                <th>City</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each hotelslist}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>{{this.city}}</td>
+                <td>{{this.rating}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>

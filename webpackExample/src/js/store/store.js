@@ -1,18 +1,22 @@
-import { createStore, combineReducers } from 'redux';
-import { ReduxConstants } from '../shared/constants';
-import ViewHandler from '../views/viewHandler';
-import { restaurant, allRestaurants, currentView } from './reducers';
+import { createStore, combineReducers } from "redux";
+import { ReduxConstants } from "../shared/constants";
+import ViewHandler from "../views/viewHandler";
+import { restaurant, allRestaurants, currentView } from "./reducers";
 
-import initialState from './initialState.json';
+import initialState from "./initialState.json";
 
 const appReducers = combineReducers({
   allRestaurants,
   restaurant,
-  currentView,
+  currentView
 });
 
-const state = initialState;
+var state = initialState;
+//state = (localStorage["redux-store"])  ? JSON.parse(localStorage["redux-store"])   : initialState;
+
 const store = createStore(appReducers, state);
+ 
+
 
 console.log(`
 =========== Initial state 
@@ -25,6 +29,7 @@ store.subscribe(() => {
       =========== Current  state 
       `);
   console.log(curState);
+  localStorage.setItem("redux-store", JSON.stringify(curState));
 
   if (curState.currentView === ReduxConstants.DETAIL_RESTAURANT) {
     ViewHandler.displayRestaurantDetail(curState.restaurant);
