@@ -1,30 +1,45 @@
 {
-  "name": "marker-animate-unobtrusive-typescript-demo",
-  "version": "1.0.0",
-  "description": "Demo app of marker-animate-unobtrusive with TypeScript",
+  "name": "marker-animate-unobtrusive",
+  "title": "SlidingMarker",
+  "version": "0.2.8",
+  "description": "Unobtrusive Google Maps animated marker",
+  "main": "SlidingMarker.js",
   "scripts": {
-    "build": "webpack --progress",
-    "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server"
+    "//": "use '|| true' to prevent warning",
+    "build": "npm install && grunt",
+    "test": "grunt test",
+    "jshint": "grunt jshint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terikon/marker-animate-unobtrusive.git"
+  },
+  "keywords": [
+    "Google Maps",
+    "marker",
+    "marker animation",
+    "SlidingMarker"
+  ],
+  "author": {
+    "name": "Terikon Apps",
+    "email": "npm@terikon.com",
+    "url": "http://il.linkedin.com/in/romanviskin"
   },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terikon/marker-animate-unobtrusive/issues"
+  },
+  "homepage": "https://github.com/terikon/marker-animate-unobtrusive",
+  "//": "you can use something like git+https://github.com/viskin/marker-animate.git#OverlappingMarkerSpiderfier",
   "dependencies": {
-    "marker-animate-unobtrusive": "^0.2.8"
+    "jasmine-core": "^2.3.4",
+    "jquery": "*",
+    "marker-animate": "^0.0.1"
   },
   "devDependencies": {
-    "@types/node": "^6.0.48",
-    "@types/jquery": "^2.0.40",
-    "@types/googlemaps": "^3.26.2",
-    "@types/marker-animate-unobtrusive": "^0.2.4",
-    "awesome-typescript-loader": "^2.2.4",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.25.0",
-    "raw-loader": "^0.5.1",
-    "to-string-loader": "^1.1.4",
-    "typescript": "~2.0.10",
-    "webpack": "2.1.0-beta.27",
-    "webpack-dev-server": "2.1.0-beta.11",
-    "webpack-merge": "^0.15.0"
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-jasmine": "^0.9.2"
   }
 }
