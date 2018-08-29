@@ -1,0 +1,34 @@
+body{
+    font-weight: 800;
+}
+
+.class1.class2{
+    color: red;
+}   
+
+
+/* .wrapper .class1{
+    color: darkblue;
+}  */
+
+.class1 {
+    color: green;
+}
+
+.class2 {
+    color: purple;
+}
+
+
+.outer {
+    color: green;
+}
+
+.inner {
+    color: purple;
+}
+
+.outer > .inner
+{
+    color: cyan;
+}
