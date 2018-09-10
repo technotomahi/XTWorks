@@ -32,3 +32,46 @@ body{
 {
     color: cyan;
 }
+
+.wrapper{
+background-color: green;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+margin: 100px;
+}
+
+.item{
+    padding: 20px;
+    width: 1rem;
+    margin: 2px;
+    background-color: red;
+}
+
+.parent {
+
+    background-color: red;
+    height:   100px;
+    width:   100px;
+    position: absolute;
+}
+
+
+.child {
+    position: relative;
+    top:20px;
+    background-color: green;
+    padding : 10px;
+}
+
+@media (min-width: 400px) {
+    html { background: red; }
+  }
+  @media (min-width: 600px) {
+    html { background: green; }
+  }
+  @media (min-width: 800px) {
+    html { background: blue; }
+  }
+
+  

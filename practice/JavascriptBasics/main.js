@@ -1,4 +1,39 @@
  
+//"use strict"
+// Use strict test 
+let a = "Its a ";
+// let a = "sdfsf";
+// var a = "apple";
+b = "sdfsssdfsfsfsdfsdf";
+console.log(b);
+
+
+
+
+// Scope test
+console.log("=========================")
+console.log("========SCOPE start======")
+var counter = 1;
+function mf(){
+ for(var j = 0; j <= 12; j++)
+ {
+  j++;
+  k = 123;
+ }
+
+ console.log(j)
+}
+
+mf();
+
+// It will be undefined here 
+//console.log(j)
+console.log(k)
+
+console.log("=========================")
+console.log("========SCOPE= End=====")
+
+
 // querySelector 
 var test = document.querySelectorAll('li');
 console.log(test[2].innerHTML); 
