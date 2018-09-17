@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>POSTS</title>
+  <link rel="stylesheet" href="css/globalStyles.css">
+</head>
+
+<body>
+
+  <div class="site">
+
+    <div class="logo">
+     <h2>POST Management</h2>
+    </div>
+
+    <div id="allPosts"> </div>
+ 
+
+
+
+  </div>
+  <script id="postElement" type="text/template">
+      <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
+      <ul>
+        <li class="flowerInfo">Id:<%= id %></li>
+        <li class="flowerInfo">Name:<%= name %></li>
+        <li class="flowerInfo">Author:<%= author %></li>
+      </ul>
+    </script>
+
+
+ 
+
+
+  <script src="js/libs/jquery.js"></script>
+  <script src="js/libs/underscore.js"></script>
+  <script src="js/libs/backbone.js"></script>
+  <script src="js/libs/handlebars.js"></script>
+  <script src="js/models/postModel.js"></script>
+  <script src="js/collections/allPosts.js"></script>
+  <script src="js/views/postView.js"></script>
+  <script src="js/views/allPostsView.js"></script>
+  <script src="js/routes/router.js"></script>
+  <script src="js/postManagementApp.js"></script>
+
+</body>
+
+</html>
