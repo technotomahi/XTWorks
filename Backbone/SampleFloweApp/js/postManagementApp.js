@@ -4,7 +4,7 @@ var postModel = new app.postModel({id: 123, name: 'sdfsdf', author: 'Thi is the 
 var postGroup = new app.postsCollection([postModel]);
 
 
-fetch('https://jsonplaceholder.typicode.com/posts')
+fetch('http://localhost:3000/posts')
 .then(response => response.json())
 .then(json =>{
 // create model for all these posts 
@@ -13,7 +13,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     var postModel =  new app.postModel({
       id: post.id,
       title: post.title,
-      author: post.author
+      body: post.body
       
     });
     postGroup.add(postModel);

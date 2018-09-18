@@ -59,3 +59,13 @@ body {
 .bgColorImage {
   background-color: #CEBDBD;
 }
+
+
+/* 
+Posts */
+
+.post-block {
+  background-color: #E0E0E0;
+  margin: 1rem;
+    padding: 1rem; 
+} 

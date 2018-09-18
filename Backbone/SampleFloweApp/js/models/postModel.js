@@ -4,7 +4,7 @@ app.postModel = Backbone.Model.extend({
     defaults: {
         id:"",
         title: "",
-        author: ""
+        body: ""
     }
 
 });
