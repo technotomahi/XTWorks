@@ -15,23 +15,25 @@
      <h2>POST Management</h2>
     </div>
 
-    <div id="allPosts"> </div>
+    <div id="allPosts" > </div>
  
 
 
 
   </div>
-  <script id="postElement" type="text/template" >      
-      <ul class="post-block">
-        <li class="flowerInfo"><strong>Id: </strong> <%= id %></li>
-        <li class="flowerInfo"> <strong>Name: </strong> <%= title %></li>
-        <li class="flowerInfo"> <strong>Body: </strong> <%= body %></li>
-      </ul>
-  </script>
+  <script id="postElement" type="text/template" >    
+    <div>
+      <span class="btn-right" >Edit</span>
+      <span class="btn-delete" > Delete</span>
+        <ul class="post-block">
+            <li class="flowerInfo"><strong>Id: </strong> <%= id %></li>
+            <li class="flowerInfo"> <strong>Name: </strong> <%= title %></li>
+            <li class="flowerInfo"> <strong>Body: </strong> <%= body %></li>
+          </ul>
 
-
- 
-
+    </div>
+     
+  </script> 
 
   <script src="js/libs/jquery.js"></script>
   <script src="js/libs/underscore.js"></script>

@@ -5,6 +5,7 @@ app.postModel = Backbone.Model.extend({
         id:"",
         title: "",
         body: ""
-    }
+    },
+    urlRoot: 'http://localhost:3000/posts'
 
 });

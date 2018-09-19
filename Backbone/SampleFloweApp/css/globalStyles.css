@@ -10,7 +10,7 @@ body {
 .site {
   background-color: #fff;
   border: 1px solid red;
-  width: 960px;
+  width: 90vw;
   min-height: 630px;
   margin: 20px auto 0;
 }
@@ -65,7 +65,29 @@ body {
 Posts */
 
 .post-block {
-  background-color: #E0E0E0;
+  background-color: #f3f3f3;
   margin: 1rem;
-    padding: 1rem; 
+    padding: 1rem;  
 } 
+
+.btn-right {
+ float: right;
+ color:blue;
+ margin: 1rem 2rem 0 0;
+ cursor: pointer;
+ display: block;
+}
+
+.post-block:hover   {
+ 
+  background-color: #E0E0E0;
+}
+
+ 
+
+.btn-delete { 
+  color:red; 
+  float: right; 
+    margin: 1rem 2rem 0 0;
+    cursor: pointer;
+ }
