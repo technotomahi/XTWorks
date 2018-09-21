@@ -1,0 +1,13 @@
+https://www.youtube.com/playlist?list=PLX2HoWE32I8OCnumQmc9lcjnHIjAamIy6
+
+
+the source code is there at the comment section
+
+i.e;  
+https://github.com/michaelcheng924/backbone_tutorial_blogroll_app
+
+it uses 
+	node
+	Mongo
+	backbone
+

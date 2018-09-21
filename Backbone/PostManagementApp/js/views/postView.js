@@ -30,8 +30,9 @@ app.postView = Backbone.View.extend({
     $( idSelector +  " .btn-right").hide();
     $( idSelector +  " .btn-delete").hide();
     $( idSelector +  " .post-block").hide();
-    $( idSelector +  " .edit-post").show(); 
-    $( idSelector +  " .edit-actions").show();   
+    // $( idSelector +  " .edit-post").show(); 
+    this.$( ".edit-post").show(); 
+    this.$(  " .edit-actions").show();   
   },
 
   onClickSave: function() {
