@@ -4,25 +4,51 @@ app.postView = Backbone.View.extend({
   tagName: "article",
   template: _.template($("#postElement").html()),
   events: {
-    "click .btn-right": "onclickEdit",
-    "click .btn-delete": "onclickDelete"
+    "click .btn-right": "onClickEdit",
+    "click .btn-delete": "onClickDelete",
+    "click .btn-save": "onClickSave",
+    "click .btn-cancel": "onClickCancel"
   },
   render: function() {
     var postTemplate = this.template(this.model.toJSON());
     this.$el.html(postTemplate);
     return this;
   },
-  onclickEdit: function() {
+  onClickCancel: function() {
     var postId = this.model.attributes.id;
-  alert("Going to update this post with id " + postId + "You can check that the title will be updated y appending '_updated' at teh title ");
-    // Lets try to update 
-    var postToUpdate = new app.postModel({ id: postId });
+    var idSelector = "#post-" + postId;
+    $( idSelector +  " .btn-right").show();
+    $( idSelector +  " .btn-delete").show();
+    $( idSelector +  " .post-block").show();
+    $( idSelector +  " .edit-post").hide(); 
+    $( idSelector +  " .edit-actions").toggle();   
+  },
+  
+  onClickEdit: function() {
+    var postId = this.model.attributes.id;
+    var idSelector = "#post-" + postId;
+    $( idSelector +  " .btn-right").hide();
+    $( idSelector +  " .btn-delete").hide();
+    $( idSelector +  " .post-block").hide();
+    $( idSelector +  " .edit-post").show(); 
+    $( idSelector +  " .edit-actions").show();   
+  },
+
+  onClickSave: function() {
+    var postId = this.model.attributes.id;
+        var postToUpdate = new app.postModel({ id: postId });
     postToUpdate.fetch({
       success: function(postResponse) {
         console.log("Found the post: " + postResponse.get("title"));
 
         // Let us update this retreived book now (doing it in the callback) [UPDATE]
-        postResponse.set("title", postResponse.get("title") + "_updated");
+        var idSelector = "#post-" + postId;
+        
+       
+        var newTitle = $( idSelector +  " .title-input").val();
+        var newBody = $( idSelector +  " .body-input").val();
+        postResponse.set("title", newTitle);
+        postResponse.set("body", newBody);
         postResponse.save(
           {},
           {
@@ -38,7 +64,7 @@ app.postView = Backbone.View.extend({
       }
     });
   },
-  onclickDelete: function() {
+  onClickDelete: function() {
     var postId = this.model.attributes.id;
     var response = confirm("Going to delete this post with id " + postId); 
     if(!response)
