@@ -2,19 +2,18 @@ var app = app || {};
 
 app.postView = Backbone.View.extend({
   tagName: "article",
-  template: _.template($("#postElement").html()), // now template is a compiled executable function
+  // template: _.template($("#postElement").html()), // now template is a compiled executable function
   events: {
     "click .btn-right": "onClickEdit",
     "click .btn-delete": "onClickDelete",
     "click .btn-save": "onClickSave",
     "click .btn-cancel": "onClickCancel"
   },
-  // Templating with underscore
-  render: function() {
-    var postTemplate = this.template(this.model.toJSON());
-    this.$el.html(postTemplate);
+  render: function () {
+    var rendered = Handlebars.templates.post(this.model.toJSON());
+       this.$el.html(rendered);
     return this;
-  }, 
+  },
     
   // Templating with handlebars
   onClickCancel: function() {
