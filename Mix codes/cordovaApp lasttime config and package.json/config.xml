@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ch.mycompany.mobapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>My First mobile App</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <hook src="scripts/prepareAngular2App.js" type="before_prepare" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="loadUrlTimeoutValue" value="700000" />
+        <config-file parent="/resources" target="./res/values/strings.xml">
+            <string name="fb_app_id">255912921868815</string>
+            <string name="fb_app_name">CordovaApp</string>
+        </config-file>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.124899772216-ekppk4nflm4m57abbepc3vhdktote3gb" />
+        <variable name="WEB_APPLICATION_CLIENT_ID" value="124899772216-ekppk4nflm4m57abbepc3vhdktote3gb.apps.googleusercontent.com" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="^2.2.0">
+        <variable name="APP_ID" value="255912921868815" />
+        <variable name="APP_NAME" value="CordovaApp" />
+        <variable name="ANDROID_SDK_VERSION" value="4.+" />
+    </plugin>
+    <preference name="android-minSdkVersion" value="26" />
+    <preference name="android-targetSdkVersion" value="26" />
+    <plugin name="cordova-plugin-firebase" spec="^1.0.5" />
+    <engine name="browser" spec="^5.0.3" />
+    <engine name="android" spec="^6.4.0" />
+</widget>
